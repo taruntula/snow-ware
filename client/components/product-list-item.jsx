@@ -2,7 +2,7 @@ import React from 'react';
 
 function ProductListItem(props) {
   return (
-    <div className="col-3">
+    <div className="col-4">
       <div className="thumbnail">
         <h1 className="text-center">
           <i className="fas fa-cat"></i>
