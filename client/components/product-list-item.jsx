@@ -5,7 +5,7 @@ function ProductListItem(props) {
     <div className="col-4">
       <div className="thumbnail">
         <h1 className="text-center">
-          <img src={props.image} alt=""/>
+          <img src={props.image} alt="" />
           {/* <i className="fas fa-cat"></i> */}
         </h1>
         {/* <img src="..server/public/images/example-product.png" alt=""/> */}
