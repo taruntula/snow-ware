@@ -23,14 +23,23 @@ class ProductList extends React.Component {
     this.getProducts();
   }
   render() {
+    const allProducts = this.state.products;
     return (
       <div className="row">
         {/* use map to do this later when you get backend data */}
+        {allProducts.map(singleProduct => {
+          return <ProductListItem key={singleProduct.id} name={singleProduct.name} image={singleProduct.image} price={singleProduct.price} description={singleProduct.shortDescription} />;
+        })}
+        {/* <ProductListItem />
         <ProductListItem />
         <ProductListItem />
         <ProductListItem />
         <ProductListItem />
         <ProductListItem />
+        <ProductListItem />
+        <ProductListItem />
+        <ProductListItem />
+        <ProductListItem /> */}
       </div>
     );
   }
