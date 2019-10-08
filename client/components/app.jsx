@@ -9,9 +9,7 @@ export default class App extends React.Component {
       <div className="container">
         <Header />
         <div className="container">
-          <div className="row">
-            <ProductList />
-          </div>
+          <ProductList />
         </div>
       </div>
     );
