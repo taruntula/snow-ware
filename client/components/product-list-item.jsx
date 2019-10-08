@@ -1,6 +1,8 @@
 import React from 'react';
 
 function ProductListItem(props) {
+  const id = props.id;
+  const idObject = { id: id };
   return (
     <div className="col-4 mb-3 h-10 set-height">
       <div className="card h-100">
@@ -9,6 +11,7 @@ function ProductListItem(props) {
           <h3>{props.name}</h3>
           <h6>{props.price}</h6>
           <p>{props.description}</p>
+          <button className="btn btn-light" onClick={() => props.newView('details', idObject)}>Details</button>
         </div>
       </div>
     </div>
