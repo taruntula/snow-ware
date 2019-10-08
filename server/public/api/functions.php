@@ -10,15 +10,4 @@ function error_handler($error){
   print($json_output);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 ?>
