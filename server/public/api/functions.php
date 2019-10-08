@@ -1,5 +1,7 @@
 <?php
-
+function startup() {
+  header('Content-Type:application/json');
+}
 function error_handler($error){
   $output = [
     'success' => false ,
@@ -9,5 +11,5 @@ function error_handler($error){
   $json_output = json_encode($output);
   print($json_output);
 }
-
+startup();
 ?>
