@@ -3,7 +3,13 @@ require_once('functions.php');
 set_exception_handler('error_handler');
 require_once('db_connection.php');
 
-$query = "SELECT * FROM `products`";
+if(!empty($_GET['id'])) {
+  $whereClause = "id = {$_GET['id']}";
+}
+else {
+  $whereClause = 1;
+}
+$query = "SELECT * FROM `products` WHERE {$whereClause}";
 $result = mysqli_query($conn,$query);
 
 
