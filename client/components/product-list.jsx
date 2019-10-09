@@ -27,7 +27,7 @@ class ProductList extends React.Component {
     return (
       <div className="row">
         {allProducts.map(singleProduct => {
-          return <ProductListItem key={singleProduct.id} name={singleProduct.name} image={singleProduct.image} price={singleProduct.price} description={singleProduct.shortDescription} />;
+          return <ProductListItem key={singleProduct.id} id={singleProduct.id} name={singleProduct.name} image={singleProduct.image} price={singleProduct.price} description={singleProduct.shortDescription} newView={this.props.view}/>;
         })}
       </div>
     );
