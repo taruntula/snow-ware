@@ -19,6 +19,10 @@ export default class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.getCartItems();
+  }
+
   getCartItems() {
     fetch('/api/dummy-cart-items.json')
       .then(response => response.json())
@@ -34,7 +38,7 @@ export default class App extends React.Component {
     if (this.state.view['name'] === 'catalog') {
       return (
         <div className="container">
-          <Header />
+          <Header cartItemCount={this.state.cart.length} />
           <div className="container">
             <ProductList view={this.setView} />
           </div>
