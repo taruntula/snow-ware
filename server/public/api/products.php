@@ -18,7 +18,6 @@ else {
 $query = "SELECT * FROM `products` WHERE {$whereClause}";
 $result = mysqli_query($conn,$query);
 
-
 if(!$result){
   throw new Exception('query error ' . mysqli_error($conn));
 }
@@ -36,5 +35,4 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 $jsonData = json_encode($output);
 print($jsonData);
-
 ?>
