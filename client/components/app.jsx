@@ -7,7 +7,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'catalog', params: {} }
+      view: { name: 'catalog', params: {} },
+      cart: []
     };
     this.setView = this.setView.bind(this);
   }
@@ -16,6 +17,17 @@ export default class App extends React.Component {
     this.setState({
       view: { name: name, params: params }
     });
+  }
+
+  getCartItems() {
+    fetch('/api/dummy-cart-items.json')
+      .then(response => response.json())
+      .then(cartArray => {
+        this.setState({
+          cart: cartArray
+        });
+      })
+      .catch(error => console.error('Fetch failed', error));
   }
 
   render() {
