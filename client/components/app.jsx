@@ -11,6 +11,7 @@ export default class App extends React.Component {
       cart: []
     };
     this.setView = this.setView.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   setView(name, params) {
@@ -19,16 +20,33 @@ export default class App extends React.Component {
     });
   }
 
-  componentDidMount() {
-    this.getCartItems();
-  }
-
   getCartItems() {
     fetch('/api/dummy-cart-items.json')
       .then(response => response.json())
       .then(cartArray => {
         this.setState({
           cart: cartArray
+        });
+      })
+      .catch(error => console.error('Fetch failed', error));
+  }
+
+  componentDidMount() {
+    this.getCartItems();
+  }
+
+  addToCart(product) {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+    fetch('/api/dummy-cart-items.json', {
+      method: 'POST',
+      body: JSON.stringify(product),
+      headers: myHeaders
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          cart: this.state.cart.concat(product)
         });
       })
       .catch(error => console.error('Fetch failed', error));
@@ -46,7 +64,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view['name'] === 'details') {
       return (
-        <ProductDetails viewParams={this.state.view['params']} view={this.setView} />
+        <ProductDetails viewParams={this.state.view['params']} view={this.setView} addToCart={this.addToCart} />
       );
     }
   }
