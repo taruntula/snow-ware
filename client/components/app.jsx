@@ -67,14 +67,12 @@ export default class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          cart: this.state.cart.concat(data)
+          view: { name: 'catalog', params: {} },
+          cart: []
         });
       })
       .catch(error => console.error('Fetch failed', error));
-    this.setState({
-      view: { name: 'catalog', params: {} },
-      cart: []
-    });
+
   }
 
   getCartTotal() {
