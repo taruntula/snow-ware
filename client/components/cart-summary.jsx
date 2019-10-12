@@ -5,7 +5,14 @@ function CartSummary(props) {
   const cartArray = props.cart;
   const total = props.total;
   if (cartArray.length === 0) {
-    return (<h1>Cart is Empty</h1>);
+    return (
+      <div className="container">
+        <div className="row justify-content-center">
+          <h1>Cart is Empty</h1>
+        </div>
+      </div>
+
+    );
   } else {
     return (
       <div className="container">
