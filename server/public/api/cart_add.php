@@ -1,8 +1,9 @@
 <?php
-if (defined('INTERNAL')) {
+if (defined(INTERNAL)) {
   print("Exiting, cannot allow direct access");
   exit();
 }
+
 
 $input = getBodyData();
 $id =intval($input['id']);
@@ -43,8 +44,7 @@ mysqli_query($conn, "START TRANSACTION");
 
 if(!$cartID) {
   $insertQuery = "INSERT INTO `cart`
-   (`created`) VALUES
-   ({NOW()})";
+   SET `created` = NOW()";
   $insertResult = mysqli_query($conn,$insertQuery);
   if (!$insertResult) {
     throw new Exception("Sql error" . mysqli_error($conn));
@@ -58,7 +58,7 @@ if(!$cartID) {
 
 $insertCartItemsQuery = "INSERT INTO `cartItems`
 (`count`,`productID`,`price`,`added`,`cartID`) VALUES
-(1, {$id}, {$price}, {NOW()}, {$cartID}) ON DUPLICATE KEY UPDATE `count` = count + 1";
+(1, {$id}, {$price}, NOW(), {$cartID}) ON DUPLICATE KEY UPDATE `count` = count + 1";
 $result = mysqli_query($conn, $insertCartItemsQuery);
 if (!$result) {
   throw new Exception("Sql error with insert cart items query" . mysqli_error($conn));
