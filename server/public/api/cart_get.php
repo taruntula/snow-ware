@@ -7,11 +7,11 @@ if (!INTERNAL) {
   exit('no direct calls');
 }
 
-if (empty($_SESSION['cartID'])) {
+if (empty($_SESSION['cartId'])) {
   print(json_encode("[]"));
   exit('no cart for this session');
 } else {
-  $cartID = intval($_SESSION['cartID']);
+  $cartID = intval($_SESSION['cartId']);
 }
 
 $query = "SELECT cartItems.`count`, products.`id`, products.`name`, products.`price`, products.`image`, products.`shortDescription` FROM `cartItems`
