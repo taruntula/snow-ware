@@ -9,13 +9,13 @@ if (!INTERNAL) {
 
 if (empty($_SESSION['cartID'])) {
   print(json_encode("[]"));
-  exit();
+  exit('no cart for this session');
 } else {
   $cartID = intval($_SESSION['cartID']);
 }
 
-$query = "SELECT cartItems.count, products.id, products.name, products.price, products.image, products.shortDescription FROM `cartItems`
-          JOIN `products` ON cartItems.productID = products.id";
+$query = "SELECT cartItems.`count`, products.`id`, products.`name`, products.`price`, products.`image`, products.`shortDescription` FROM `cartItems`
+          JOIN `products` ON cartItems.`productID` = products.`id`";
 
 $result = mysqli_query($conn, $query);
 if (!$result) {
