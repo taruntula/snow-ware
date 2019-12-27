@@ -1,7 +1,10 @@
 <?php
-if (defined('INTERNAL')) {
-  print("Exiting, cannot allow direct access");
-  exit();
+// if (defined('INTERNAL')) {
+//   print("Exiting, cannot allow direct access");
+//   exit();
+// }
+if (!INTERNAL) {
+  exit('no direct calls');
 }
 
 if (empty($_SESSION['cartID'])) {

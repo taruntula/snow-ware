@@ -1,7 +1,11 @@
 <?php
-if (defined(INTERNAL)) {
-  print("Exiting, cannot allow direct access");
-  exit();
+// if (defined(INTERNAL)) {
+//   print("Exiting, cannot allow direct access");
+//   exit();
+// }
+require_once('functions.php');
+if (!INTERNAL) {
+  exit('no direct calls');
 }
 
 
@@ -19,7 +23,8 @@ if ($id) {
   throw new Exception("Id not given");
 }
 
-if (empty($_SESSION['cartId'])) {
+
+if (!empty($_SESSION['cartId'])) {
   $cartID = $_SESSION['cartId'];
 } else {
   $cartID = false;
@@ -58,7 +63,7 @@ if(!$cartID) {
 
 $insertCartItemsQuery = "INSERT INTO `cartItems`
 (`count`,`productID`,`price`,`added`,`cartID`) VALUES
-(1, {$id}, {$price}, NOW(), {$cartID}) ON DUPLICATE KEY UPDATE `count` = count + 1";
+(1, {$id}, {$price}, NOW(), {$cartID}) ON DUPLICATE KEY UPDATE `count` = `count` + 1";
 $result = mysqli_query($conn, $insertCartItemsQuery);
 if (!$result) {
   throw new Exception("Sql error with insert cart items query" . mysqli_error($conn));

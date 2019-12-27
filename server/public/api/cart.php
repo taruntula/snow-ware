@@ -1,6 +1,7 @@
 <?php
 define("INTERNAL",true);
 require_once('functions.php');
+startup();
 session_start();
 set_exception_handler('error_handler');
 require_once('db_connection.php');
