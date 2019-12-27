@@ -11,4 +11,11 @@ function error_handler($error){
   $json_output = json_encode($output);
   print($json_output);
 }
+if (!function_exists('getBodyData')) {
+  function getBodyData()
+  {
+    $data = file_get_contents('php://input');
+    return json_decode($data, true);
+  }
+}
 ?>

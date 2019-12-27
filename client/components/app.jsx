@@ -3,6 +3,7 @@ import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
+import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,8 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
+    this.getCartTotal = this.getCartTotal.bind(this);
   }
 
   setView(name, params) {
@@ -53,6 +56,35 @@ export default class App extends React.Component {
       .catch(error => console.error('Fetch failed', error));
   }
 
+  placeOrder(orderObject) {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+    fetch('/api/orders.php', {
+      method: 'POST',
+      body: JSON.stringify(orderObject),
+      headers: myHeaders
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          view: { name: 'catalog', params: {} },
+          cart: []
+        });
+      })
+      .catch(error => console.error('Fetch failed', error));
+
+  }
+
+  getCartTotal() {
+    const allCart = this.state.cart.slice(0);
+    let sum = 0;
+    for (var integerI = 0; integerI < allCart.length; integerI++) {
+      sum += parseInt(allCart[integerI].price);
+    }
+    const formattedSum = '$' + (sum / 100).toFixed(2);
+    return formattedSum;
+  }
+
   render() {
     if (this.state.view['name'] === 'catalog') {
       return (
@@ -69,7 +101,11 @@ export default class App extends React.Component {
       );
     } else if (this.state.view['name'] === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} view={this.setView} />
+        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} />
+      );
+    } else if (this.state.view['name'] === 'checkout') {
+      return (
+        <CheckoutForm onSubmit={this.placeOrder} view={this.setView} total={this.getCartTotal()} />
       );
     }
   }
