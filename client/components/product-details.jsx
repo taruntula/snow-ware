@@ -9,11 +9,13 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/dummy-product-details.json')
+    fetch('/api/products.php')
       .then(response => response.json())
       .then(productArray => {
+        const id = this.props.viewParams.id;
+        const filteredProduct = productArray.filter(oneProduct => oneProduct.id === id);
         this.setState({
-          product: productArray
+          product: filteredProduct
         });
       })
       .catch(error => console.error('Fetch failed', error));
@@ -32,17 +34,17 @@ class ProductDetails extends React.Component {
           </div>
           <div className="mt-2 row h-50 align-items-center">
             <div className="col-6">
-              <img className="img-fluid" src={this.state.product.image} alt="" />
+              <img className="img-fluid" src={this.state.product[0].images[0]} alt="" />
             </div>
             <div className="col-6">
-              <h3>{this.state.product.name}</h3>
-              <h6>{(this.state.product.price / 100).toFixed(2)}</h6>
-              <p>{this.state.product.shortDescription}</p>
-              <button className="btn btn-success" onClick={() => this.props.addToCart(this.state.product)}>Add to Cart</button>
+              <h3>{this.state.product[0].name}</h3>
+              <h6>{(this.state.product[0].price / 100).toFixed(2)}</h6>
+              <p>{this.state.product[0].shortDescription}</p>
+              <button className="btn btn-success" onClick={() => this.props.addToCart(this.state.product[0])}>Add to Cart</button>
             </div>
           </div>
           <div className="row mt-3">
-            <p>{this.state.product.longDescription}</p>
+            <p>{this.state.product[0].longDescription}</p>
           </div>
         </div>
       );

@@ -28,8 +28,9 @@ export default class App extends React.Component {
     fetch('/api/cart.php')
       .then(response => response.json())
       .then(cartArray => {
+        const newCartArray = cartArray.slice();
         this.setState({
-          cart: cartArray
+          cart: newCartArray
         });
       })
       .catch(error => console.error('Fetch failed', error));
@@ -40,17 +41,18 @@ export default class App extends React.Component {
   }
 
   addToCart(product) {
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
+    let idObj = {};
+    idObj['id'] = product.id;
     fetch('/api/cart.php', {
       method: 'POST',
-      body: JSON.stringify(product),
-      headers: myHeaders
+      body: JSON.stringify(idObj),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
-      .then(response => response.json())
       .then(data => {
         this.setState({
-          cart: this.state.cart.concat(data)
+          cart: this.state.cart.concat(product)
         });
       })
       .catch(error => console.error('Fetch failed', error));
