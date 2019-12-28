@@ -25,7 +25,7 @@ if (!$subResult) {
 }
 
 
-$query = "SELECT p.id, p.name, p.price, p.shortDescription,
+$query = "SELECT p.id, p.name, p.price, p.shortDescription,p.longDescription,
 	GROUP_CONCAT(i.url) AS images
 FROM `products` AS p
 JOIN `images` AS i

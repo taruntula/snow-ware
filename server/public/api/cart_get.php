@@ -1,8 +1,5 @@
 <?php
-// if (defined('INTERNAL')) {
-//   print("Exiting, cannot allow direct access");
-//   exit();
-// }
+
 if (!INTERNAL) {
   exit('no direct calls');
 }
@@ -26,12 +23,13 @@ $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
   $data[] = $row;
 }
-if ($data === []) {
-  print("empty array: []");
-  exit();
-} else {
-  print(json_encode($data));
-}
+// if ($data === []) {
+//   print(json_decode("empty array: []"));
+//   exit();
+// } else {
+//   print(json_encode($data));
+// }
+print(json_encode($data));
 
 
 
