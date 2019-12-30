@@ -26,7 +26,7 @@ function CartSummary(props) {
         </div>
         <div className="col-12 mb-2">
           {cartArray.map(singleCartItem => {
-            return <CartSummaryItem key={singleCartItem.id} image={singleCartItem.image} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} />;
+            return <CartSummaryItem key={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} />;
           })}
         </div>
         <div className="col-12 mt-6">

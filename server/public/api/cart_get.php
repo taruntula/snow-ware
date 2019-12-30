@@ -11,8 +11,12 @@ if (empty($_SESSION['cartId'])) {
   $cartID = intval($_SESSION['cartId']);
 }
 
-$query = "SELECT cartItems.`count`, products.`id`, products.`name`, products.`price`, products.`image`, products.`shortDescription` FROM `cartItems`
-          JOIN `products` ON cartItems.`productID` = products.`id`";
+$query = "SELECT cartItems.`count`, products.`id`, products.`name`, products.`price`, products.`shortDescription`,
+            (SELECT `url`
+            FROM `images`
+            WHERE products.`id` = images.`product_id` LIMIT 1) AS images
+            FROM `cartItems`
+            JOIN `products` ON cartItems.`productID` = products.`id`";
 
 $result = mysqli_query($conn, $query);
 if (!$result) {
