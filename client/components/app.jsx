@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.getCartTotal = this.getCartTotal.bind(this);
+    this.getCartItems = this.getCartItems.bind(this);
   }
 
   setView(name, params) {
@@ -51,11 +52,13 @@ export default class App extends React.Component {
       }
     })
       .then(data => {
-        this.setState({
-          cart: this.state.cart.concat(product)
-        });
+        this.getCartItems();
+        // this.setState({
+        //   cart: this.state.cart.concat(product)
+        // });
       })
       .catch(error => console.error('Fetch failed', error));
+
   }
 
   placeOrder(orderObject) {
