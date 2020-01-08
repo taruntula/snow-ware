@@ -27,7 +27,7 @@ class ProductDetails extends React.Component {
     } else {
       return (
         <div className="container">
-          <div className="row mt-2 bg-dark">
+          <div className="row mt-2">
             <button onClick={() => this.props.view('catalog', {})} className="btn btn-link">
               <h6> Back to catalog</h6>
             </button>
