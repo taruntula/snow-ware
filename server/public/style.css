@@ -1,7 +1,7 @@
 html,body {
-  background-image: url(./images/winter.jpg);
+  /* background-image: url(./images/winter.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   font-family: 'Cinzel', serif;
 }
 
@@ -11,4 +11,14 @@ html,body {
 
 .cart-height {
   height: 10rem;
+}
+
+.cool-background {
+  background-image: url(./images/perform.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.quote-font {
+  font-family: 'Permanent Marker', cursive;
 }

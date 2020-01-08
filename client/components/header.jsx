@@ -1,9 +1,10 @@
 import React from 'react';
+import './header.css';
 
 function Header(props) {
   return (
-    <div className="row mb-4 text-light bg-dark">
-      <h1 className="col-8 ml-3">Snowboard Supplies</h1>
+    <div className="row text-light bg-dark">
+      <h1 className="col-8 ml-3 mt-3 font">SNOW-WARE</h1>
       <h1 className="col-3 ml-5">
         <div className="row justify-content-end">
           <h3 className="m-2">{props.cartItemCount} Items</h3>

@@ -95,6 +95,11 @@ export default class App extends React.Component {
       return (
         <div className="container-fullwidth">
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
+          <div className="row set-height cool-background flex-column justify-content-center p-5">
+            <div className="col-6 m-5 justify-content-center p-5 text-center quote-font">
+              <h1>{"If you're not falling, you're not learning"}</h1>
+            </div>
+          </div>
           <div className="container">
             <ProductList view={this.setView} />
           </div>
