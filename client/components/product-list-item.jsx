@@ -1,4 +1,5 @@
 import React from 'react';
+import './product-list-item.css';
 
 function ProductListItem(props) {
   const id = props.id;
@@ -6,7 +7,7 @@ function ProductListItem(props) {
   const formattedPrice = '$' + (props.price / 100).toFixed(2);
   return (
     <div className="col-4 mb-3 h-10 set-height">
-      <div className="card h-100">
+      <div className="card h-100 see-through">
         <img className="card-img-top h-50 img-fluid p-3" src={props.image} alt="" />
         <div className="card-body h-50 p-3">
           <h3>{props.name}</h3>

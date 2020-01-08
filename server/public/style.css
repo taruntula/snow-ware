@@ -1,3 +1,10 @@
+html,body {
+  background-image: url(./images/winter.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Cinzel', serif;
+}
+
 .set-height {
   height: 30rem;
 }

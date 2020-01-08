@@ -93,7 +93,7 @@ export default class App extends React.Component {
   render() {
     if (this.state.view['name'] === 'catalog') {
       return (
-        <div className="container">
+        <div className="container-fullwidth">
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
           <div className="container">
             <ProductList view={this.setView} />

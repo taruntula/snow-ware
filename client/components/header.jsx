@@ -2,8 +2,8 @@ import React from 'react';
 
 function Header(props) {
   return (
-    <div className="row">
-      <h1 className="col-8 ml-3">Wicked Sales</h1>
+    <div className="row mb-4 text-light bg-dark">
+      <h1 className="col-8 ml-3">Snowboard Supplies</h1>
       <h1 className="col-3 ml-5">
         <div className="row justify-content-end">
           <h3 className="m-2">{props.cartItemCount} Items</h3>
