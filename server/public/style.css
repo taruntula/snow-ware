@@ -24,6 +24,7 @@ html,body {
 }
 .skew {
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+  /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%); */
 }
 .light-grey {
   background-color:black;
