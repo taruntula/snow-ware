@@ -4,3 +4,14 @@
     font: bold;
     font-family: 'Josefin Sans', sans-serif;
 }
+
+.black {
+  background-color: black;
+}
+/* .diagonal {
+  transform: skewY(2deg);
+}
+
+.unskew {
+  transform: skewY(-2deg);
+} */

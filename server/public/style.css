@@ -22,3 +22,15 @@ html,body {
 .quote-font {
   font-family: 'Permanent Marker', cursive;
 }
+.skew {
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+}
+.light-grey {
+  background-color:black;
+}
+/* .diagonal {
+  transform: skewY(2deg);
+}
+.unskew {
+  transform: skewY(-2deg);
+} */

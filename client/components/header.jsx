@@ -3,7 +3,7 @@ import './header.css';
 
 function Header(props) {
   return (
-    <div className="row text-light bg-dark">
+    <div className="row text-light black">
       <h1 className="col-8 ml-3 mt-3 font">SNOW-WARE</h1>
       <h1 className="col-3 ml-5">
         <div className="row justify-content-end">
