@@ -6,3 +6,11 @@
   background-repeat: no-repeat;
   /* background: rgba(180, 190, 180, 0.3); */
 }
+
+.picture {
+  background-image: url(../../server/public/images/snowboard-1.png);
+}
+
+.catalog-height {
+  height: 35rem;
+}
