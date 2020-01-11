@@ -15,14 +15,14 @@ function CartSummary(props) {
     );
   } else {
     return (
-      <div className="container">
+      <div className="container h-100">
         <div className="row mt-2">
           <button onClick={() => props.view('catalog', {})} className="btn btn-link">
             <h6> Back to catalog</h6>
           </button>
         </div>
         <div className="row ml-1 mb-2">
-          <div className="col-8 pr-5">
+          <div className="col-8 pr-5 h-100">
             <h2>Cart</h2>
             <div className="col-12 mb-2">
               {cartArray.map(singleCartItem => {
@@ -81,7 +81,7 @@ function CartSummary(props) {
                 <hr />
               </div>
             </div>
-            <div className="row mt-auto">
+            <div className="row mt-2">
               <div className="col-6">
                 <h2>TOTAL: </h2>
               </div>
@@ -89,9 +89,9 @@ function CartSummary(props) {
                 <h5>{total}</h5>
               </div>
             </div>
-            <div className="row justify-content-center mt-auto">
+            <div className="row justify-content-center mt-2">
               <div className="col-10 text-center">
-                <button className="btn btn-light btn-lg" onClick={() => props.view('checkout', {})}>Checkout</button>
+                <button className="btn btn-light btn-lg btn-block" onClick={() => props.view('checkout', {})}>Checkout</button>
               </div>
             </div>
           </div>
