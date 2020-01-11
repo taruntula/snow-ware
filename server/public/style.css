@@ -3,7 +3,12 @@ html,body {
   background-position: center;
   background-size: cover; */
   font-family: 'Cinzel', serif;
+  width:100%;
   margin: 0;
+}
+#root {
+  height: 100vh;
+  width:100%;
 }
 
 .set-height {
@@ -31,7 +36,9 @@ html,body {
   background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0));
   /* background-color:black; */
 }
-
+.alata-font {
+  font-family: 'Alata', sans-serif;
+}
 /* .diagonal {
   transform: skewY(2deg);
 }
