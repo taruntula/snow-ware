@@ -1,7 +1,40 @@
+html,body {
+  /* background-image: url(./images/winter.jpg);
+  background-position: center;
+  background-size: cover; */
+  font-family: 'Cinzel', serif;
+  margin: 0;
+}
+
 .set-height {
-  height: 30rem;
+  height: 35rem;
 }
 
 .cart-height {
   height: 10rem;
 }
+
+.cool-background {
+  background-image: url(./images/perform.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.quote-font {
+  font-family: 'Permanent Marker', cursive;
+}
+.skew {
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+}
+.black-fade {
+  background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0));
+  /* background-color:black; */
+}
+
+/* .diagonal {
+  transform: skewY(2deg);
+}
+.unskew {
+  transform: skewY(-2deg);
+} */

@@ -9,7 +9,7 @@ function CartSummaryItem(props) {
   return (
     <div className="row mb-2">
       <div className="col-2 cart-height">
-        <img className="img-fluid h-100" src={image} alt="" />
+        <img className="img-fluid h-100" src={`../../images/${image}`} alt="" />
       </div>
       <div className="col-10">
         <h3>{name}</h3>

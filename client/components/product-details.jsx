@@ -34,7 +34,7 @@ class ProductDetails extends React.Component {
           </div>
           <div className="mt-2 row h-50 align-items-center">
             <div className="col-6">
-              <img className="img-fluid" src={this.state.product[0].images[0]} alt="" />
+              <img className="img-fluid" src={`../../images/${this.state.product[0].images[0]}`} alt="" />
             </div>
             <div className="col-6">
               <h3>{this.state.product[0].name}</h3>
