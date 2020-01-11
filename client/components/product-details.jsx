@@ -26,7 +26,7 @@ class ProductDetails extends React.Component {
       return null;
     } else {
       return (
-        <div className="container">
+        <div className="container alata-font">
           <div className="row mt-2">
             <button onClick={() => this.props.view('catalog', {})} className="btn btn-link">
               <h6> Back to catalog</h6>
@@ -36,7 +36,7 @@ class ProductDetails extends React.Component {
             <div className="col-6">
               <img className="img-fluid" src={`../../images/${this.state.product[0].images[0]}`} alt="" />
             </div>
-            <div className="col-6">
+            <div className="col-6 text-center">
               <h3>{this.state.product[0].name}</h3>
               <h6>{(this.state.product[0].price / 100).toFixed(2)}</h6>
               <p>{this.state.product[0].shortDescription}</p>

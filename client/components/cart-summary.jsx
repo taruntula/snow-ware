@@ -15,7 +15,7 @@ function CartSummary(props) {
     );
   } else {
     return (
-      <div className="container h-100">
+      <div className="container h-100 alata-font">
         <div className="row mt-2">
           <button onClick={() => props.view('catalog', {})} className="btn btn-link">
             <h6> Back to catalog</h6>
