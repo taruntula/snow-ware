@@ -3,6 +3,7 @@ html,body {
   background-position: center;
   background-size: cover; */
   font-family: 'Cinzel', serif;
+  margin: 0;
 }
 
 .set-height {
@@ -26,8 +27,9 @@ html,body {
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
 }
-.light-grey {
-  background-color:black;
+.black-fade {
+  background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0));
+  /* background-color:black; */
 }
 
 /* .diagonal {

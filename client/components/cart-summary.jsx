@@ -22,20 +22,77 @@ function CartSummary(props) {
           </button>
         </div>
         <div className="row ml-1 mb-2">
-          <h2>My Cart</h2>
-        </div>
-        <div className="col-12 mb-2">
-          {cartArray.map(singleCartItem => {
-            return <CartSummaryItem key={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} />;
-          })}
-        </div>
-        <div className="col-12 mt-6">
-          <div className="row">
-            <div className="col-9">
-              <h2>Item Total {total}</h2>
+          <div className="col-8 pr-5">
+            <h2>Cart</h2>
+            <div className="col-12 mb-2">
+              {cartArray.map(singleCartItem => {
+                return <CartSummaryItem key={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} />;
+              })}
             </div>
-            <div className="col-3">
-              <button className="btn btn-light" onClick={() => props.view('checkout', {})}>Checkout</button>
+          </div>
+          <div className="col-4 d-flex flex-column">
+            <div className="row">
+              <div className="col-6">
+                <h3>Summary</h3>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr/>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <h5>SUBTOTAL:</h5>
+              </div>
+              <div className="col-6 text-right">
+                <h5>{total}</h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr />
+              </div>
+            </div>
+            <div className="row mt-2">
+              <div className="col-4">
+                <h6>Shipping:</h6>
+              </div>
+              <div className="col-2" style={{ color: 'orange' }}>
+                <i className="fas fa-question-circle"></i>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$10.00</h5>
+              </div>
+            </div>
+            <div className="row mt-2">
+              <div className="col-4">
+                <h6>Tax:</h6>
+              </div>
+              <div className="col-2" style={{ color: 'orange' }}>
+                <i className="fas fa-question-circle"></i>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$10.00</h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr />
+              </div>
+            </div>
+            <div className="row mt-auto">
+              <div className="col-6">
+                <h2>TOTAL: </h2>
+              </div>
+              <div className="col-6 text-right">
+                <h5>{total}</h5>
+              </div>
+            </div>
+            <div className="row justify-content-center mt-auto">
+              <div className="col-10 text-center">
+                <button className="btn btn-light btn-lg" onClick={() => props.view('checkout', {})}>Checkout</button>
+              </div>
             </div>
           </div>
         </div>

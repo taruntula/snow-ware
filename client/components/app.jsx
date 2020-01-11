@@ -93,7 +93,7 @@ export default class App extends React.Component {
   render() {
     if (this.state.view['name'] === 'catalog') {
       return (
-        <div className="container-fullwidth light-grey">
+        <div className="container-fullwidth black-fade">
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center p-5 skew">
             <div className="col-6 m-5 justify-content-center p-5 text-center quote-font">
