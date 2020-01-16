@@ -3,7 +3,11 @@ import CartSummaryItem from './cart-summary-item';
 
 function CartSummary(props) {
   const cartArray = props.cart;
-  const total = props.total;
+  const subtotal = props.total;
+  const total = props.total + 2000;
+  const formattedSubtotal = '$' + (subtotal / 100).toFixed(2);
+  const formattedTotal = '$' + (total / 100).toFixed(2);
+
   if (cartArray.length === 0) {
     return (
       <div className="container">
@@ -46,7 +50,7 @@ function CartSummary(props) {
                 <h5>SUBTOTAL:</h5>
               </div>
               <div className="col-6 text-right">
-                <h5>{total}</h5>
+                <h5>{formattedSubtotal}</h5>
               </div>
             </div>
             <div className="row">
@@ -86,7 +90,7 @@ function CartSummary(props) {
                 <h2>TOTAL: </h2>
               </div>
               <div className="col-6 text-right">
-                <h5>{total}</h5>
+                <h5>{formattedTotal}</h5>
               </div>
             </div>
             <div className="row justify-content-center mt-2">
