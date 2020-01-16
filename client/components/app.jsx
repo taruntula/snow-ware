@@ -86,8 +86,9 @@ export default class App extends React.Component {
     for (var integerI = 0; integerI < allCart.length; integerI++) {
       sum += parseInt(allCart[integerI].price);
     }
-    const formattedSum = '$' + (sum / 100).toFixed(2);
-    return formattedSum;
+
+    // const formattedSum = '$' + (sum / 100).toFixed(2);
+    return sum;
   }
 
   render() {
@@ -97,7 +98,7 @@ export default class App extends React.Component {
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center p-5 skew">
             <div className="col-6 m-5 justify-content-center p-5 text-center quote-font">
-              <h1>{"If you're not falling, you're not learning"}</h1>
+              {/* <h1>{"If you're not falling, you're not learning"}</h1> */}
             </div>
           </div>
           <div className="container">

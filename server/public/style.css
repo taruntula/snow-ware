@@ -26,12 +26,14 @@ html,body {
 }
 
 .quote-font {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  font-weight: bolder;
 }
-.skew {
+/* .skew {
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
-}
+} */
 .black-fade {
   background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0));
   /* background-color:black; */

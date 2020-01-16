@@ -8,6 +8,10 @@
 .black {
   background-color: black;
 }
+
+.cart-header-font {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 /* .diagonal {
   transform: skewY(2deg);
 }
