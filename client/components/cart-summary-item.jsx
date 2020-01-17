@@ -18,11 +18,11 @@ function CartSummaryItem(props) {
         <h6>{formattedPrice}</h6>
         <p>{description}</p>
         <div className="row">
-          <div className="col-3">
-            <button className="btn btn-secondary">REMOVE</button>
+          <div className="col-4">
+            <button className="btn btn-block btn-secondary">REMOVE</button>
           </div>
-          <div className="col-9 pl-0">
-            <button className="btn btn-secondary">EDIT</button>
+          <div className="col-4 pl-0">
+            <button className="btn btn-block btn-secondary">EDIT</button>
           </div>
 
         </div>
