@@ -84,7 +84,7 @@ export default class App extends React.Component {
     const allCart = this.state.cart.slice(0);
     let sum = 0;
     for (var integerI = 0; integerI < allCart.length; integerI++) {
-      sum += parseInt(allCart[integerI].price);
+      sum += parseInt(allCart[integerI].price) * parseInt(allCart[integerI].count);
     }
 
     // const formattedSum = '$' + (sum / 100).toFixed(2);
