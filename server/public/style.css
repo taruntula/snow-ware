@@ -16,7 +16,11 @@ html,body {
 }
 
 .cart-height {
-  height: 10rem;
+  height: 13rem;
+}
+
+.catalog-width {
+  width: 70%;
 }
 
 .cool-background {
