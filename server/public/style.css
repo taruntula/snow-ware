@@ -1,4 +1,3 @@
-@import "react-alice-carousel/lib/alice-carousel.css";
 
 html,body {
   /* background-image: url(./images/winter.jpg);
@@ -21,8 +20,20 @@ html,body {
   height: 13rem;
 }
 
+.details-height {
+  height: 30rem;
+}
+
+.details-small {
+  height: 9rem;
+}
+
 .catalog-width {
   width: 70%;
+}
+
+.img-fluid.details-small:hover {
+  border: 2px solid;
 }
 
 .cool-background {
