@@ -6,6 +6,7 @@ class ProductDetails extends React.Component {
     this.state = {
       product: null
     };
+    this.handleOnDragStart = this.handleOnDragStart.bind(this);
   }
 
   componentDidMount() {
@@ -19,6 +20,9 @@ class ProductDetails extends React.Component {
         });
       })
       .catch(error => console.error('Fetch failed', error));
+  }
+  handleOnDragStart(event) {
+    event.preventDefault();
   }
 
   render() {
