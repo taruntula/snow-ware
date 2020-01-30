@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-alice-carousel": "1.17.3",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "react-responsive-carousel": "3.1.51"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
