@@ -96,8 +96,8 @@ export default class App extends React.Component {
       return (
         <div className="container-fullwidth black-fade">
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
-          <div className="row set-height cool-background flex-column justify-content-center p-5 skew">
-            <div className="col-6 m-5 justify-content-center p-5 text-center quote-font">
+          <div className="row set-height cool-background flex-column justify-content-center skew">
+            <div className="col-6 m-5 justify-content-center text-center quote-font logo">
               {/* <h1>{"If you're not falling, you're not learning"}</h1> */}
             </div>
           </div>

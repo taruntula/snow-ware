@@ -13,7 +13,7 @@ html,body {
 }
 
 .set-height {
-  height: 35rem;
+  height: 26rem;
 }
 
 .cart-height {
@@ -38,8 +38,16 @@ html,body {
 
 .cool-background {
   background-image: url(./images/perform.jpg);
+  /* background-image: url(./images/perform.jpg); */
   background-position: center;
   background-size: cover;
+}
+
+.logo {
+  background-image: url(./images/mountain-logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .quote-font {
@@ -47,12 +55,13 @@ html,body {
   font-style: italic;
   font-weight: bolder;
 }
-/* .skew {
+.skew {
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
-} */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
 .black-fade {
-  background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom, black, rgb(36, 35, 35));
+  /* background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0)); */
   /* background-color:black; */
 }
 .alata-font {
