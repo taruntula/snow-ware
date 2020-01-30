@@ -9,6 +9,13 @@
   background-color: black;
 }
 
+.black-logo {
+  background-image: url(../../server/public/images/mountain-logo-black.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .cart-header-font {
   font-family: 'Source Sans Pro', sans-serif;
 }
