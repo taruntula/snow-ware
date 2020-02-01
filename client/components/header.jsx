@@ -10,10 +10,6 @@ function Header(props) {
       <div className="col-3 mt-3 font">
         <h3 className>SNOW-WARE</h3>
       </div>
-
-      {/* <h5 className="col-1 black-logo">i
-        <img src={'../../images/mountain-logo-black.png'} alt=""/>
-      </h5> */}
       <h1 className="col-8">
         <div className="row justify-content-end cart-header-font">
           <h3 className="m-2">{props.cartItemCount} Items</h3>
