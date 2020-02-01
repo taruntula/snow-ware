@@ -14,6 +14,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.removeCart = this.removeCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.getCartTotal = this.getCartTotal.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
@@ -61,6 +62,10 @@ export default class App extends React.Component {
 
   }
 
+  removeCart(product) {
+    alert('HI removed from cart');
+  }
+
   placeOrder(orderObject) {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
@@ -86,8 +91,6 @@ export default class App extends React.Component {
     for (var integerI = 0; integerI < allCart.length; integerI++) {
       sum += parseInt(allCart[integerI].price) * parseInt(allCart[integerI].count);
     }
-
-    // const formattedSum = '$' + (sum / 100).toFixed(2);
     return sum;
   }
 
@@ -98,7 +101,6 @@ export default class App extends React.Component {
           <Header cartItemCount={this.state.cart.length} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center skew">
             <div className="col-6 m-5 justify-content-center text-center quote-font logo">
-              {/* <h1>{"If you're not falling, you're not learning"}</h1> */}
             </div>
           </div>
           <div className="container">
@@ -112,7 +114,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view['name'] === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} />
+        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} removeCart={this.removeCart} />
       );
     } else if (this.state.view['name'] === 'checkout') {
       return (
