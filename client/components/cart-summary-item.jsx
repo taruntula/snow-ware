@@ -14,7 +14,7 @@ function CartSummaryItem(props) {
       </div>
       <div className="col-9">
         <h3>{name}</h3>
-        <h6>Qty. {quantity}</h6>
+        <h6>Qty <i className="fas fa-minus-circle"></i> {quantity} <i className="fas fa-plus-circle"></i></h6>
         <h6>{formattedPrice}</h6>
         <p>{description}</p>
         <div className="row">
