@@ -2,6 +2,7 @@ import React from 'react';
 
 function CartSummaryItem(props) {
   const name = props.name;
+  const id = props.id;
   const image = props.image;
   const quantity = props.count;
   const description = props.description;
@@ -19,7 +20,7 @@ function CartSummaryItem(props) {
         <p>{description}</p>
         <div className="row">
           <div className="col-4">
-            <button className="btn btn-block btn-secondary">REMOVE</button>
+            <button onClick={() => props.removeCart(id)} className="btn btn-block btn-secondary">REMOVE</button>
           </div>
           <div className="col-4 pl-0">
             <button className="btn btn-block btn-secondary">EDIT</button>
