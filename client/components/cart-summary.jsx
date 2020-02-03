@@ -30,7 +30,7 @@ function CartSummary(props) {
             <h2>Cart</h2>
             <div className="col-12 mb-2">
               {cartArray.map(singleCartItem => {
-                return <CartSummaryItem key={singleCartItem.id} id={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} count={singleCartItem.count} removeCart={props.removeCart} />;
+                return <CartSummaryItem key={singleCartItem.id} id={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} count={singleCartItem.count}/>;
               })}
             </div>
           </div>
