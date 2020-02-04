@@ -13,6 +13,9 @@ switch($_SERVER['REQUEST_METHOD']) {
   case "GET":
     require_once('cart_get.php');
     break;
+  case "PATCH":
+    require_once('cart_patch.php');
+    break;
 }
 
 // header('Content-Type: application/json');
