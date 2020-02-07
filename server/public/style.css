@@ -67,6 +67,11 @@ html,body {
 .alata-font {
   font-family: 'Alata', sans-serif;
 }
+
+.disable-button {
+  pointer-events: none;
+  cursor: not-allowed;
+}
 /* .diagonal {
   transform: skewY(2deg);
 }
