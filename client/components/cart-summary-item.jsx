@@ -4,14 +4,23 @@ class CartSummaryItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 0
+      quantity: 0,
+      disableFlag: false
     };
   }
 
   componentDidMount() {
-    this.setState({
-      quantity: this.props.count
-    });
+    this.props.count <= 1 ? (
+      this.setState({
+        quantity: this.props.count,
+        disableFlag: true
+      })
+    ) : (
+      this.setState({
+        quantity: this.props.count,
+        disableFlag: false
+      })
+    );
   }
   changeQuantity(addOrMinus) {
     let bodyObj = {};
@@ -31,9 +40,17 @@ class CartSummaryItem extends React.Component {
       }
     })
       .then(data => {
-        this.setState({
-          quantity: newCount
-        });
+        newCount <= 1 ? (
+          this.setState({
+            quantity: newCount,
+            disableFlag: true
+          })
+        ) : (
+          this.setState({
+            quantity: newCount,
+            disableFlag: false
+          })
+        );
       })
       .catch(error => console.error('Fetch failed', error));
   }
@@ -52,7 +69,7 @@ class CartSummaryItem extends React.Component {
         </div>
         <div className="col-9">
           <h3>{name}</h3>
-          <h6>Qty <i onClick={() => this.changeQuantity('minus')} className="fas fa-minus-circle"></i> {this.state.quantity} <i onClick={() => this.changeQuantity('add')} className="fas fa-plus-circle"></i></h6>
+          <h6>Qty <i onClick={() => this.changeQuantity('minus')} className={this.state.disableFlag ? 'fas fa-minus-circle disable-button' : 'fas fa-minus-circle'}></i> {this.state.quantity} <i onClick={() => this.changeQuantity('add')} className="fas fa-plus-circle"></i></h6>
           <h6>{formattedPrice}</h6>
           <p>{description}</p>
           <div className="row">
