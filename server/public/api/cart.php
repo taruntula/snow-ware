@@ -16,6 +16,9 @@ switch($_SERVER['REQUEST_METHOD']) {
   case "PATCH":
     require_once('cart_patch.php');
     break;
+  case "DELETE":
+    require_once('cart_remove.php');
+    break;
 }
 
 // header('Content-Type: application/json');
