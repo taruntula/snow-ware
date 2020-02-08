@@ -64,7 +64,7 @@ class CartSummaryItem extends React.Component {
           <p>{description}</p>
           <div className="row">
             <div className="col-4">
-              <button className="btn btn-block btn-secondary">REMOVE</button>
+              <button onClick={() => this.props.remove(intId)} className="btn btn-block btn-secondary">REMOVE</button>
             </div>
             <div className="col-4 pl-0">
               <button onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary">DETAILS</button>

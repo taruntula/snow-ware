@@ -80,8 +80,20 @@ export default class App extends React.Component {
       .catch(error => console.error('Fetch failed', error));
   }
 
-  removeCart(product) {
-    alert('HI removed from cart');
+  removeCart(productId) {
+    let bodyObj = {};
+    bodyObj['id'] = productId;
+    fetch('/api/cart.php', {
+      method: 'DELETE',
+      body: JSON.stringify(bodyObj),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(data => {
+        this.getCartItems();
+      })
+      .catch(error => console.error('Fetch failed', error));
   }
 
   placeOrder(orderObject) {
@@ -132,7 +144,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view['name'] === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} quantity={this.changeQuantity} />
+        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} quantity={this.changeQuantity} remove={this.removeCart} />
       );
     } else if (this.state.view['name'] === 'checkout') {
       return (
