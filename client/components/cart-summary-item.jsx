@@ -23,36 +23,24 @@ class CartSummaryItem extends React.Component {
     );
   }
   changeQuantity(addOrMinus) {
-    let bodyObj = {};
-    bodyObj['id'] = this.props.id;
-    bodyObj['addOrMinus'] = addOrMinus;
     let newCount = parseInt(this.state.quantity);
     if (addOrMinus === 'add') {
       newCount += 1;
     } else {
       newCount -= 1;
     }
-    fetch('/api/cart.php', {
-      method: 'PATCH',
-      body: JSON.stringify(bodyObj),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(data => {
-        newCount <= 1 ? (
-          this.setState({
-            quantity: newCount,
-            disableFlag: true
-          })
-        ) : (
-          this.setState({
-            quantity: newCount,
-            disableFlag: false
-          })
-        );
+    newCount <= 1 ? (
+      this.setState({
+        quantity: newCount,
+        disableFlag: true
       })
-      .catch(error => console.error('Fetch failed', error));
+    ) : (
+      this.setState({
+        quantity: newCount,
+        disableFlag: false
+      })
+    );
+    this.props.quantity(this.props.id, addOrMinus);
   }
   render() {
     const name = this.props.name;

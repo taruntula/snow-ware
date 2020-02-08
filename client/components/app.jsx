@@ -18,6 +18,7 @@ export default class App extends React.Component {
     this.placeOrder = this.placeOrder.bind(this);
     this.getCartTotal = this.getCartTotal.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
+    this.changeQuantity = this.changeQuantity.bind(this);
   }
 
   setView(name, params) {
@@ -60,6 +61,23 @@ export default class App extends React.Component {
       })
       .catch(error => console.error('Fetch failed', error));
 
+  }
+
+  changeQuantity(productId, addOrMinus) {
+    let bodyObj = {};
+    bodyObj['id'] = productId;
+    bodyObj['addOrMinus'] = addOrMinus;
+    fetch('/api/cart.php', {
+      method: 'PATCH',
+      body: JSON.stringify(bodyObj),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(data => {
+        this.getCartItems();
+      })
+      .catch(error => console.error('Fetch failed', error));
   }
 
   removeCart(product) {
@@ -114,7 +132,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view['name'] === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} />
+        <CartSummary cart={this.state.cart} view={this.setView} total={this.getCartTotal()} quantity={this.changeQuantity} />
       );
     } else if (this.state.view['name'] === 'checkout') {
       return (
