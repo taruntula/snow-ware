@@ -22,7 +22,7 @@ function CartSummary(props) {
       <div className="container h-100 alata-font">
         <div className="row mt-2">
           <button onClick={() => props.view('catalog', {})} className="btn btn-link">
-            <h6> Back to catalog</h6>
+            <h6>Back to catalog</h6>
           </button>
         </div>
         <div className="row ml-1 mb-2">
@@ -30,7 +30,7 @@ function CartSummary(props) {
             <h2>Cart</h2>
             <div className="col-12 mb-2">
               {cartArray.map(singleCartItem => {
-                return <CartSummaryItem key={singleCartItem.id} id={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} count={singleCartItem.count} quantity={props.quantity}/>;
+                return <CartSummaryItem key={singleCartItem.id} id={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} count={singleCartItem.count} quantity={props.quantity} view={props.view}/>;
               })}
             </div>
           </div>

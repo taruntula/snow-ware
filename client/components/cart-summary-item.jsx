@@ -44,7 +44,9 @@ class CartSummaryItem extends React.Component {
   }
   render() {
     const name = this.props.name;
-    // const id = this.props.id;
+    const id = this.props.id;
+    const intId = parseInt(id);
+    const idObject = { id: intId };
     const image = this.props.image;
     // const quantity = this.props.count;
     const description = this.props.description;
@@ -65,7 +67,7 @@ class CartSummaryItem extends React.Component {
               <button className="btn btn-block btn-secondary">REMOVE</button>
             </div>
             <div className="col-4 pl-0">
-              <button className="btn btn-block btn-secondary">EDIT</button>
+              <button onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary">DETAILS</button>
             </div>
 
           </div>
