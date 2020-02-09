@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal';
 
 class CartSummaryItem extends React.Component {
   constructor(props) {
@@ -67,9 +68,11 @@ class CartSummaryItem extends React.Component {
               <button onClick={() => this.props.remove(intId)} className="btn btn-block btn-secondary">REMOVE</button>
             </div>
             <div className="col-4 pl-0">
-              <button onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary">DETAILS</button>
+              <button type="button" onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary" data-toggle="modal" data-target="#exampleModal">DETAILS</button>
+              <>
+                <Modal />
+              </>
             </div>
-
           </div>
         </div>
       </div>
