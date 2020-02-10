@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal(props) {
+function RemoveModal(props) {
 
   return (
     <div className="modal fade" id={props.modalId} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -35,4 +35,4 @@ function Modal(props) {
   );
 }
 
-export default Modal;
+export default RemoveModal;

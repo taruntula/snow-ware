@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './modal';
+import RemoveModal from './remove-modal';
 
 class CartSummaryItem extends React.Component {
   constructor(props) {
@@ -68,7 +68,7 @@ class CartSummaryItem extends React.Component {
             <div className="col-4">
               <button type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target={modalId}>REMOVE</button>
               <>
-                <Modal image={image} name={name} description={description} id={id} price={formattedPrice} quantity={this.state.quantity} remove={this.props.remove} modalId={noHashModalId}/>
+                <RemoveModal image={image} name={name} description={description} id={id} price={formattedPrice} quantity={this.state.quantity} remove={this.props.remove} modalId={noHashModalId}/>
               </>
             </div>
             <div className="col-4 pl-0">
