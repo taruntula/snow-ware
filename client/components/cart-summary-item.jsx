@@ -49,7 +49,6 @@ class CartSummaryItem extends React.Component {
     const intId = parseInt(id);
     const idObject = { id: intId };
     const image = this.props.image;
-    // const quantity = this.props.count;
     const description = this.props.description;
     const price = this.props.price * this.state.quantity;
     const formattedPrice = '$' + (price / 100).toFixed(2);
@@ -65,13 +64,13 @@ class CartSummaryItem extends React.Component {
           <p>{description}</p>
           <div className="row">
             <div className="col-4">
-              <button onClick={() => this.props.remove(intId)} className="btn btn-block btn-secondary">REMOVE</button>
+              <button type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target="#removeModal">REMOVE</button>
+              <>
+                <Modal image={image} name={name} description={description} id={id} price={formattedPrice} quantity={this.state.quantity} remove={this.props.remove} modalId="removeModal"/>
+              </>
             </div>
             <div className="col-4 pl-0">
-              <button type="button" onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary" data-toggle="modal" data-target="#exampleModal">DETAILS</button>
-              <>
-                <Modal />
-              </>
+              <button type="button" onClick={() => this.props.view('details', idObject)} className="btn btn-block btn-secondary">DETAILS</button>
             </div>
           </div>
         </div>
