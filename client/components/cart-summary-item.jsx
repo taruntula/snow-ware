@@ -52,6 +52,8 @@ class CartSummaryItem extends React.Component {
     const description = this.props.description;
     const price = this.props.price * this.state.quantity;
     const formattedPrice = '$' + (price / 100).toFixed(2);
+    const modalId = '#removeModal' + id;
+    const noHashModalId = 'removeModal' + id;
     return (
       <div className="row mb-2">
         <div className="col-3 cart-height d-flex justify-content-center flex-column">
@@ -64,9 +66,9 @@ class CartSummaryItem extends React.Component {
           <p>{description}</p>
           <div className="row">
             <div className="col-4">
-              <button type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target="#removeModal">REMOVE</button>
+              <button type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target={modalId}>REMOVE</button>
               <>
-                <Modal image={image} name={name} description={description} id={id} price={formattedPrice} quantity={this.state.quantity} remove={this.props.remove} modalId="removeModal"/>
+                <Modal image={image} name={name} description={description} id={id} price={formattedPrice} quantity={this.state.quantity} remove={this.props.remove} modalId={noHashModalId}/>
               </>
             </div>
             <div className="col-4 pl-0">
