@@ -37,17 +37,33 @@ class CheckoutForm extends React.Component {
         <div className="row">
           <form onSubmit={this.submitHandler} className="col-12">
             <div className="form-group">
-              <label htmlFor="exampleFormControlInput1">Name</label>
+              <label htmlFor="name">Name</label>
               <input type="text" className="form-control" id="name" placeholder="name" onChange={this.changeHandler}></input>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleFormControlInput1">Credit Card</label>
+              <label htmlFor="creditCard">Credit Card</label>
               <input type="text" className="form-control" id="creditCardNumber" placeholder="#" onChange={this.changeHandler}></input>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleFormControlTextarea1">Shipping Address</label>
-              <textarea className="form-control" id="address" rows="3" onChange={this.changeHandler}></textarea>
+              <label htmlFor="address">Address</label>
+              <input type="text" className="form-control" id="address" placeholder="Address" onChange={this.changeHandler}></input>
             </div>
+            <div className="form-group">
+              <label htmlFor="zipCode">Zip Code</label>
+              <input type="text" className="form-control" id="zipCode" placeholder="#" onChange={this.changeHandler}></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="city">City</label>
+              <input type="text" className="form-control" id="city" placeholder="" onChange={this.changeHandler}></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="state">State</label>
+              <input type="text" className="form-control" id="state" placeholder="" onChange={this.changeHandler}></input>
+            </div>
+            {/* <div className="form-group">
+              <label htmlFor="address">Shipping Address</label>
+              <textarea className="form-control" id="address" rows="3" onChange={this.changeHandler}></textarea>
+            </div> */}
             <div className="row">
               <div className="col-9">
                 <button onClick={() => this.props.view('catalog', {})} className="btn btn-link">Continue Shopping</button>
