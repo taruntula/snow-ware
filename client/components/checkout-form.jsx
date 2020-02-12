@@ -6,7 +6,10 @@ class CheckoutForm extends React.Component {
     this.state = {
       name: '',
       creditCardNumber: '',
-      address: ''
+      address: '',
+      zipCode: null,
+      city: '',
+      state: ''
     };
     this.changeHandler = this.changeHandler.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
