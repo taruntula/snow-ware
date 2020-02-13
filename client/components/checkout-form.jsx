@@ -90,13 +90,15 @@ class CheckoutForm extends React.Component {
   }
   render() {
     const { formErrors } = this.state;
+    const { total } = this.props;
+    const formattedTotal = '$' + (total / 100 + 20).toFixed(2);
     return (
-      <div className="container ubuntu-font">
+      <div className="container alata-font">
         <div className="row">
           <h1>Checkout</h1>
         </div>
         <div className="row">
-          <h4>Order Total: {this.props.total}</h4>
+          <h4>Order Total: {formattedTotal}</h4>
         </div>
         <div className="row">
           <form onSubmit={this.submitHandler} className="col-12">
@@ -121,26 +123,28 @@ class CheckoutForm extends React.Component {
                 <span className="text-danger">{formErrors.address}</span>
               )}
             </div>
-            <div className="form-group">
-              <label htmlFor="zipCode">Zip Code</label>
-              <input type="text" className="form-control" id="zipCode" placeholder="#" onChange={this.changeHandler}></input>
-              {formErrors.zipCode.length > 0 && (
-                <span className="text-danger">{formErrors.zipCode}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="city">City</label>
-              <input type="text" className="form-control" id="city" placeholder="" onChange={this.changeHandler}></input>
-              {formErrors.city.length > 0 && (
-                <span className="text-danger">{formErrors.city}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="state">State</label>
-              <input type="text" className="form-control" id="state" placeholder="" onChange={this.changeHandler}></input>
-              {formErrors.state.length > 0 && (
-                <span className="text-danger">{formErrors.state}</span>
-              )}
+            <div className="form-row mb-3">
+              <div className="col-6">
+                <label htmlFor="city">City</label>
+                <input type="text" className="form-control" id="city" placeholder="" onChange={this.changeHandler}></input>
+                {formErrors.city.length > 0 && (
+                  <span className="text-danger">{formErrors.city}</span>
+                )}
+              </div>
+              <div className="col-3">
+                <label htmlFor="state">State</label>
+                <input type="text" className="form-control" id="state" placeholder="" onChange={this.changeHandler}></input>
+                {formErrors.state.length > 0 && (
+                  <span className="text-danger">{formErrors.state}</span>
+                )}
+              </div>
+              <div className="col-3">
+                <label htmlFor="zipCode">Zip Code</label>
+                <input type="text" className="form-control" id="zipCode" placeholder="#" onChange={this.changeHandler}></input>
+                {formErrors.zipCode.length > 0 && (
+                  <span className="text-danger">{formErrors.zipCode}</span>
+                )}
+              </div>
             </div>
             <div className="row">
               <div className="col-9">
