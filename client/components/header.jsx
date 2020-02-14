@@ -3,9 +3,9 @@ import './header.css';
 
 function Header(props) {
   return (
-    <nav className=" navbar fixed-top row text-light black">
+    <nav className="navbar fixed-top row text-light black">
       <div className="col-1">
-        <img className="img-fluid" src={'../../images/mountain-logo-black.png'} alt=""/>
+        <img className="img-fluid" src={'../../images/mountain-logo-black.png'} width="90" height="90" alt=""/>
       </div>
       <div className="col-3 mt-3 font">
         <h3 className>SNOW-WARE</h3>
