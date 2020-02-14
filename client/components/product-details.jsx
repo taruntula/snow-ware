@@ -36,7 +36,7 @@ class ProductDetails extends React.Component {
             </button>
           </div>
           <div className="mt-2 row h-50 justify-content-center">
-            <div className="col-6 text-center d-flex justify-content-center">
+            <div className="col-md-6 col-sm-12 text-center d-flex justify-content-center">
               <Carousel axis="vertical" width="46vh">
                 <div>
                   <img src={`../../images/${this.state.product[0].images[0]}`} />
@@ -49,7 +49,7 @@ class ProductDetails extends React.Component {
                 </div>
               </Carousel>
             </div>
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <div className="row">
                 <div className="col">
                   <h1>{this.state.product[0].name}</h1>

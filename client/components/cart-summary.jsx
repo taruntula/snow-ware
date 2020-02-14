@@ -26,7 +26,7 @@ function CartSummary(props) {
           </button>
         </div>
         <div className="row ml-1 mb-2">
-          <div className="col-8 pr-5 h-100">
+          <div className="col-sm-12 col-md-8 pr-5 h-100">
             <h2>Cart</h2>
             <div className="col-12 mb-2">
               {cartArray.map(singleCartItem => {
@@ -34,7 +34,7 @@ function CartSummary(props) {
               })}
             </div>
           </div>
-          <div className="col-4 d-flex flex-column">
+          <div className="col-sm-12 col-md-4 d-flex flex-column">
             <div className="row">
               <div className="col-6">
                 <h3>Summary</h3>

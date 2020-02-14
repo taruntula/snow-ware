@@ -6,7 +6,7 @@ function ProductListItem(props) {
   const idObject = { id: id };
   const formattedPrice = '$' + (props.price / 100).toFixed(2);
   return (
-    <div className="col-xs-12 col-sm-6 col-md-4 mb-4 h-10 catalog-height">
+    <div className="col-sm-6 col-md-4 mb-4 h-10 catalog-height">
       <div className="card h-100 see-through">
         <img className="catalog-width mx-auto card-img-top h-50 img-fluid p-3" src={`../../images/${props.image}`} alt="" />
         <div className="card-body h-50 p-3 text-center d-flex flex-column ubuntu-font ">
