@@ -56,10 +56,10 @@ class CartSummaryItem extends React.Component {
     const noHashModalId = 'removeModal' + id;
     return (
       <div className="row mb-2">
-        <div className="col-3 cart-height d-flex justify-content-center flex-column">
+        <div className="col-sm-12 col-md-3 cart-height d-flex justify-content-center flex-column">
           <img className="img-fluid h-100" src={`../../images/${image}`} alt="" />
         </div>
-        <div className="col-9">
+        <div className="col-sm-12 col-md-9">
           <h3>{name}</h3>
           <h6>Qty <i onClick={() => this.changeQuantity('minus')} className={this.state.disableFlag ? 'fas fa-minus-circle disable-button' : 'fas fa-minus-circle'}></i> {this.state.quantity} <i onClick={() => this.changeQuantity('add')} className="fas fa-plus-circle"></i></h6>
           <h6>{formattedPrice}</h6>
