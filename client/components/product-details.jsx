@@ -1,4 +1,5 @@
 import React from 'react';
+import DetailsModal from './details-modal';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -67,7 +68,11 @@ class ProductDetails extends React.Component {
               </div>
               <div className="row mt-3">
                 <div className="col">
-                  <button className="btn btn-lg btn-secondary" onClick={() => this.props.addToCart(this.state.product[0])}>Add to Cart</button>
+                  <button onClick={() => this.props.addToCart(this.state.product[0])} type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target="#detailsModal">Add to Cart</button>
+                  <>
+                    <DetailsModal image={`../../images/${this.state.product[0].images[0]}`} name={this.state.product[0].name} description={this.state.product[0].shortDescription} id={this.state.product[0].id} price={'$' + (this.state.product[0].price / 100).toFixed(2)} view={this.props.view} modalId="detailsModal" />
+                  </>
+                  {/* <button className="btn btn-lg btn-secondary" onClick={() => this.props.addToCart(this.state.product[0])}>Add to Cart</button> */}
                 </div>
               </div>
             </div>
