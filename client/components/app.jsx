@@ -17,6 +17,7 @@ export default class App extends React.Component {
     this.removeCart = this.removeCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.getCartTotal = this.getCartTotal.bind(this);
+    this.getCartCount = this.getCartCount.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
     this.changeQuantity = this.changeQuantity.bind(this);
   }
@@ -124,11 +125,20 @@ export default class App extends React.Component {
     return sum;
   }
 
+  getCartCount() {
+    const allCart = this.state.cart.slice(0);
+    let sum = 0;
+    for (var integerI = 0; integerI < allCart.length; integerI++) {
+      sum += parseInt(allCart[integerI].count);
+    }
+    return sum;
+  }
+
   render() {
     if (this.state.view['name'] === 'catalog') {
       return (
         <div className="container-fluid black-fade">
-          <Header cartItemCount={this.state.cart.length} view={this.setView} />
+          <Header cartItemCount={this.getCartCount()} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center skew">
             <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
             </div>
