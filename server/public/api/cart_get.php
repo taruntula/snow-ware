@@ -16,7 +16,8 @@ $query = "SELECT cartItems.`count`, products.`id`, products.`name`, products.`pr
             FROM `images`
             WHERE products.`id` = images.`product_id` LIMIT 1) AS images
             FROM `cartItems`
-            JOIN `products` ON cartItems.`productID` = products.`id`";
+            JOIN `products` ON cartItems.`productID` = products.`id`
+            WHERE cartItems.`cartID` = $cartID";
 
 $result = mysqli_query($conn, $query);
 if (!$result) {
