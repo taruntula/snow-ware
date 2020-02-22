@@ -39,12 +39,14 @@ class CheckoutForm extends React.Component {
     const creditCardRegex = /^[0-9]{16}$/;
     const addressRegex = /[A-Za-z0-9]/;
     const zipRegex = /^[0-9]{5}$/;
+    const nameRegex = /[A-Za-z][^0-9]{2,}/;
+    const stateRegex = /[A-Za-z][^0-9]{6,}/;
     let formErrors = this.state.formErrors;
     switch (id) {
       case 'name':
-        formErrors.name = value.length < 2
-          ? 'Minimum 2 characters required'
-          : '';
+        formErrors.name = nameRegex.test(value)
+          ? ''
+          : 'Minimum 2 letters required';
         break;
       case 'creditCardNumber':
         formErrors.creditCardNumber = creditCardRegex.test(value)
@@ -62,14 +64,14 @@ class CheckoutForm extends React.Component {
           : 'Invalid zip';
         break;
       case 'city':
-        formErrors.city = value.length < 2
-          ? 'Minimum 2 characters required'
-          : '';
+        formErrors.city = nameRegex.test(value)
+          ? ''
+          : 'Minimum 2 characters required';
         break;
       case 'state':
-        formErrors.state = value.length < 6
-          ? 'Minimum 6 characters required'
-          : '';
+        formErrors.state = stateRegex.test(value)
+          ? ''
+          : 'Minimum 6 letters required';
         break;
       default:
         break;
