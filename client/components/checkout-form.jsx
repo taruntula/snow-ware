@@ -81,10 +81,12 @@ class CheckoutForm extends React.Component {
   }
   submitHandler(event) {
     event.preventDefault();
+    const address = `${this.state.address} ${this.state.city}, ${this.state.state} ${this.state.zipCode}`;
+    const { name, creditCardNumber } = this.state;
     const newOrder = {
-      name: this.state.name,
-      creditCardNumber: this.state.creditCardNumber,
-      address: this.state.address
+      name: name,
+      creditCardNumber: creditCardNumber,
+      address: address
     };
     this.props.onSubmit(newOrder);
   }
