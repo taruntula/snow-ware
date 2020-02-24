@@ -8,7 +8,7 @@ function Header(props) {
         <img className="img-fluid" src="../../images/mountain-logo-black.png" width="50" height="50" alt="Logo"></img>
       </div>
       <ul className="navbar-nav font mr-auto mt-3">
-        <li className="nav-item active">
+        <li className="nav-item active pt-2">
           <h3>SNOW-WARE</h3>
         </li>
       </ul>
