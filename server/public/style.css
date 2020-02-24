@@ -78,3 +78,18 @@ html,body {
 .unskew {
   transform: skewY(-2deg);
 } */
+
+
+/* MEDIA QUERIES  */
+@media (max-width:360px) {
+  .navbar {
+    margin: 0;
+    width: 360px;
+  }
+  li h3:first-child {
+        font-size: 1.40rem;
+  }
+  .catalog-width {
+    width: 87%;
+  }
+}
