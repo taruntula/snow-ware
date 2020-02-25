@@ -28,11 +28,13 @@ function CartSummary(props) {
         <div className="row ml-1 mb-2">
           <div className="col-sm-12 col-md-8 pr-5 h-100">
             <h2>Cart</h2>
+            <hr />
             <div className="col-12 mb-2">
               {cartArray.map(singleCartItem => {
                 return <CartSummaryItem key={singleCartItem.id} id={singleCartItem.id} image={singleCartItem.images} name={singleCartItem.name} price={singleCartItem.price} description={singleCartItem.shortDescription} count={singleCartItem.count} quantity={props.quantity} remove={props.remove} view={props.view}/>;
               })}
             </div>
+            <hr/>
           </div>
           <div className="col-sm-12 col-md-4 d-flex flex-column">
             <div className="row">

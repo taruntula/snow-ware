@@ -16,10 +16,10 @@ function DetailsModal(props) {
           </div>
           <div className="modal-body">
             <div className="row">
-              <div className="col-4 cart-height">
+              <div className="col-lg-4 col-md-4 col-12 text-center modal-height">
                 <img className="img-fluid h-100" src={`../../images/${props.image}`} alt="" />
               </div>
-              <div className="col-8">
+              <div className="col-lg-8 col-md-8 col-12 text-center">
                 <h3>{props.name}</h3>
                 <h6>{props.price}</h6>
                 <p>{props.description}</p>

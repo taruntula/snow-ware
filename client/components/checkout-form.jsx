@@ -128,21 +128,21 @@ class CheckoutForm extends React.Component {
               )}
             </div>
             <div className="form-row mb-3">
-              <div className="col-6">
+              <div className="col-4">
                 <label htmlFor="city">City</label>
-                <input type="text" className="form-control" id="city" placeholder="" onChange={this.changeHandler}></input>
+                <input type="text" className="form-control" id="city" placeholder="City" onChange={this.changeHandler}></input>
                 {formErrors.city.length > 0 && (
                   <span className="text-danger">{formErrors.city}</span>
                 )}
               </div>
-              <div className="col-3">
+              <div className="col-4">
                 <label htmlFor="state">State</label>
-                <input type="text" className="form-control" id="state" placeholder="" onChange={this.changeHandler}></input>
+                <input type="text" className="form-control" id="state" placeholder="State" onChange={this.changeHandler}></input>
                 {formErrors.state.length > 0 && (
                   <span className="text-danger">{formErrors.state}</span>
                 )}
               </div>
-              <div className="col-3">
+              <div className="col-4">
                 <label htmlFor="zipCode">Zip Code</label>
                 <input type="text" className="form-control" id="zipCode" placeholder="#" onChange={this.changeHandler}></input>
                 {formErrors.zipCode.length > 0 && (
@@ -151,10 +151,10 @@ class CheckoutForm extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-9">
-                <button onClick={() => this.props.view('catalog', {})} className="btn btn-link">Continue Shopping</button>
+              <div className="col-lg-9 col-md-9 col-6">
+                <button onClick={() => this.props.view('catalog', {})} className="btn btn-primary">View Cart</button>
               </div>
-              <div className="col-3">
+              <div className="col-lg-3 col-md-3 col-6 d-flex justify-content-end">
                 <button id="checkoutButton" type="submit" className="btn btn-success">Place Order</button>
               </div>
 
