@@ -8,7 +8,7 @@ function Header(props) {
         <img className="img-fluid" src="../../images/mountain-logo-black.png" width="50" height="50" alt="Logo"></img>
       </div>
       <ul className="navbar-nav font mr-auto mt-3">
-        <li className="nav-item active pt-2">
+        <li className="nav-item active">
           <h3>SNOW-WARE</h3>
         </li>
       </ul>
@@ -17,7 +17,7 @@ function Header(props) {
           <h3>{props.cartItemCount}</h3>
         </li>
       </ul>
-      <ul className="navbar-nav font">
+      <ul className="navbar-nav font pt-2">
         <li className="nav-item">
           <h1>
             <i onClick={() => props.view('cart', {})} className="fas fa-shopping-cart m-2"></i>
