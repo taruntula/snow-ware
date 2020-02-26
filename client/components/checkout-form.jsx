@@ -24,10 +24,13 @@ class CheckoutForm extends React.Component {
     this.submitHandler = this.submitHandler.bind(this);
   }
 
-  formValid(formErrors) {
+  formValid({ formErrors, ...rest }) {
     let valid = true;
     Object.values(formErrors).forEach(val => {
       val.length > 0 && (valid = false); // makes valid false if length greater than 0
+    });
+    Object.values(rest).forEach(val => {
+      val === null && (valid = false);
     });
     return valid;
   }
@@ -37,10 +40,10 @@ class CheckoutForm extends React.Component {
     const id = event.target.id;
     const value = event.target.value;
     const creditCardRegex = /^[0-9]{16}$/;
-    const addressRegex = /[A-Za-z0-9]/;
+    const addressRegex = /[A-Za-z0-9]{2,}/;
     const zipRegex = /^[0-9]{5}$/;
-    const nameRegex = /[A-Za-z][^0-9]{2,}/;
-    const stateRegex = /[A-Za-z][^0-9]{6,}/;
+    const nameRegex = /^[A-Za-z]{2,}/;
+    const stateRegex = /^[A-Za-z]{6,}/;
     let formErrors = this.state.formErrors;
     switch (id) {
       case 'name':
@@ -83,7 +86,7 @@ class CheckoutForm extends React.Component {
   }
   submitHandler(event) {
     event.preventDefault();
-    const address = `${this.state.address} ${this.state.city}, ${this.state.state} ${this.state.zipCode}`;
+    const address = `${this.state.address} ${this.state.city} ${this.state.state} ${this.state.zipCode}`;
     const { name, creditCardNumber } = this.state;
     const newOrder = {
       name: name,
@@ -155,7 +158,7 @@ class CheckoutForm extends React.Component {
                 <button onClick={() => this.props.view('catalog', {})} className="btn btn-primary">View Cart</button>
               </div>
               <div className="col-lg-3 col-md-3 col-6 d-flex justify-content-end">
-                <button id="checkoutButton" type="submit" className="btn btn-success">Place Order</button>
+                {this.formValid(this.state) ? <button id="checkoutButton" type="submit" className="btn btn-success">Place Order</button> : <button className="btn btn-danger">Complete Form</button>}
               </div>
 
             </div>
