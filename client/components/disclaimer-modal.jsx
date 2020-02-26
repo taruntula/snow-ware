@@ -2,11 +2,11 @@ import React from 'react';
 
 function DisclaimerModal(props) {
   return (
-    <div className="modal fade show" style={{ display: 'block' }} id="disclaimerModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="disclaimerModal fade show" style={{ display: 'block' }} id="disclaimerModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">Disclaimer</h5>
+            <h5 className="modal-title text-center" id="exampleModalLabel">Disclaimer</h5>
           </div>
           <div className="modal-body">
             <div className="row">
