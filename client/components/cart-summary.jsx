@@ -10,10 +10,82 @@ function CartSummary(props) {
 
   if (cartArray.length === 0) {
     return (
-      <div className="container">
-        <div className="row justify-content-center">
-          <h1>Cart is Empty</h1>
+      <div className="container h-100 alata-font">
+        <div className="row mt-2">
+          <button onClick={() => props.view('catalog', {})} className="btn btn-link">
+            <h6>Back to catalog</h6>
+          </button>
         </div>
+        <div className="row ml-1 mb-2">
+          <div className="col-sm-12 col-md-8 pr-5 h-100">
+            <h2>Cart is empty</h2>
+            <hr />
+          </div>
+          <div className="col-sm-12 col-md-4 d-flex flex-column">
+            <div className="row">
+              <div className="col-6">
+                <h3>Summary</h3>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <h5>SUBTOTAL:</h5>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$0.00</h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr />
+              </div>
+            </div>
+            <div className="row mt-2">
+              <div className="col-4">
+                <h6>Shipping:</h6>
+              </div>
+              <div className="col-2" style={{ color: 'orange' }}>
+                <i className="fas fa-question-circle"></i>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$0.00</h5>
+              </div>
+            </div>
+            <div className="row mt-2">
+              <div className="col-4">
+                <h6>Tax:</h6>
+              </div>
+              <div className="col-2" style={{ color: 'orange' }}>
+                <i className="fas fa-question-circle"></i>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$0.00</h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <hr />
+              </div>
+            </div>
+            <div className="row mt-2">
+              <div className="col-6">
+                <h2>TOTAL: </h2>
+              </div>
+              <div className="col-6 text-right">
+                <h5>$0.00</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="row justify-content-center">
+          <h1>Cart is Empty</h1>
+        </div> */}
       </div>
 
     );
