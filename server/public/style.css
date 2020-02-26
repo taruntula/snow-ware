@@ -98,6 +98,25 @@ html,body {
     font-size: 0.8rem;
   }
 }
+/* mac smallest chrome window */
+@media (max-width:500px) {
+  .navbar {
+    margin: 0;
+    width: 500px;
+  }
+  .catalog-width {
+    width: 58%;
+  }
+  .carousel.carousel-slider {
+    left: 17px;
+  }
+  .carousel .thumbs {
+    right: 20px;
+  }
+  .cart-height {
+    height: 27rem;
+  }
+}
 /* iPhone 6/7/8 plus */
 @media (max-width:414px) {
   .navbar {
@@ -111,6 +130,15 @@ html,body {
     height: 20rem;
   }
 }
+
+/* onePlus5t */
+@media (max-width:412px) {
+  .navbar {
+    margin: 0;
+    width: 412px;
+  }
+}
+
 /* Pixel 2 */
 @media (max-width:411px) {
   .navbar {
@@ -131,6 +159,9 @@ html,body {
     margin: 0;
     width: 375px;
   }
+  .catalog-width {
+    width: 71%;
+}
   li h3:first-child {
         font-size: 1.10rem;
   }
@@ -152,7 +183,7 @@ html,body {
         font-size: 1.40rem;
   }
   .catalog-width {
-    width: 87%;
+    width: 73%;
   }
   .carousel.carousel-slider {
     left: 19px;
