@@ -149,8 +149,8 @@ export default class App extends React.Component {
           {this.state.Modal ? <DisclaimerModal toggle={this.toggleModal} /> : null }
           <Header cartItemCount={this.getCartCount()} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center skew">
-            <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
-            </div>
+            {/* <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
+            </div> */}
           </div>
           <div className="container">
             <ProductList view={this.setView} />
