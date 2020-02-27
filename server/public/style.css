@@ -3,7 +3,6 @@ html,body {
   /* background-image: url(./images/winter.jpg);
   background-position: center;
   background-size: cover; */
-  font-family: 'Cinzel', serif;
   width:100%;
   margin: 0;
 }
@@ -81,6 +80,7 @@ html,body {
   max-width: 100%;
   height: auto;
 }
+
 /* .diagonal {
   transform: skewY(2deg);
 }
@@ -98,6 +98,14 @@ html,body {
     font-size: 0.8rem;
   }
 }
+
+@media (max-width:575px) {
+  .navbar {
+    margin: 0;
+    width: 575px;
+  }
+}
+
 /* mac smallest chrome window */
 @media (max-width:500px) {
   .navbar {
@@ -115,6 +123,14 @@ html,body {
   }
   .cart-height {
     height: 27rem;
+  }
+}
+
+/* mobile L */
+@media (max-width:425px) {
+  .navbar {
+    margin: 0;
+    width: 425px;
   }
 }
 /* iPhone 6/7/8 plus */

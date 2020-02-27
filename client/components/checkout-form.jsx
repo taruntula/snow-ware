@@ -155,10 +155,10 @@ class CheckoutForm extends React.Component {
             </div>
             <div className="row">
               <div className="col-lg-9 col-md-9 col-6">
-                <button onClick={() => this.props.view('catalog', {})} className="btn btn-primary">View Cart</button>
+                <button onClick={() => this.props.view('cart', {})} className="btn btn-primary">View Cart</button>
               </div>
               <div className="col-lg-3 col-md-3 col-6 d-flex justify-content-end">
-                {this.formValid(this.state) ? <button id="checkoutButton" type="submit" className="btn btn-success">Place Order</button> : <button className="btn btn-danger">Complete Form</button>}
+                {this.formValid(this.state) ? <button id="checkoutButton" type="submit" className="btn btn-success">Place Order</button> : <button type="button" className="btn btn-danger">Complete Form</button>}
               </div>
 
             </div>

@@ -4,13 +4,15 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import DisclaimerModal from './disclaimer-modal';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: { name: 'catalog', params: {} },
-      cart: []
+      cart: [],
+      Modal: true
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
@@ -20,6 +22,7 @@ export default class App extends React.Component {
     this.getCartCount = this.getCartCount.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
     this.changeQuantity = this.changeQuantity.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   setView(name, params) {
@@ -133,15 +136,21 @@ export default class App extends React.Component {
     }
     return sum;
   }
+  toggleModal() {
+    this.setState({
+      Modal: false
+    });
+  }
 
   render() {
     if (this.state.view['name'] === 'catalog') {
       return (
         <div className="container-fluid black-fade">
+          {this.state.Modal ? <DisclaimerModal toggle={this.toggleModal} /> : null }
           <Header cartItemCount={this.getCartCount()} view={this.setView} />
           <div className="row set-height cool-background flex-column justify-content-center skew">
-            <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
-            </div>
+            {/* <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
+            </div> */}
           </div>
           <div className="container">
             <ProductList view={this.setView} />
