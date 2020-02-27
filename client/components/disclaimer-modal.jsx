@@ -6,11 +6,12 @@ function DisclaimerModal(props) {
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title text-center" id="exampleModalLabel">Disclaimer</h5>
+            <h5 className="modal-title text-center" id="exampleModalLabel">Disclaimer <i className="fas fa-exclamation-triangle" style={{ color: 'orange' }}></i></h5>
+
           </div>
           <div className="modal-body">
-            <div className="row">
-              <h3>This is a fake website. Please do not use any of your real information</h3>
+            <div className="row pl-1">
+              <h5>This is a mock e-commerce website. Please do not use any of your real information.</h5>
             </div>
           </div>
           <div className="modal-footer">
