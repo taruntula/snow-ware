@@ -5,6 +5,7 @@ import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 import DisclaimerModal from './disclaimer-modal';
+import { Link } from 'react-scroll';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -148,7 +149,11 @@ export default class App extends React.Component {
         <div className="container-fluid black-fade">
           {this.state.Modal ? <DisclaimerModal toggle={this.toggleModal} /> : null }
           <Header cartItemCount={this.getCartCount()} view={this.setView} />
-          <div className="row set-height cool-background flex-column justify-content-center">
+          <div className="row set-height cool-background justify-content-center">
+            <div className="col-4 col-md-3 col-lg-2 d-flex flex-column justify-content-center mt-5 text-center">
+
+              <button className="btn btn-secondary btn-lg"><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Shop</Link></button>
+            </div>
             {/* <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
             </div> */}
           </div>
