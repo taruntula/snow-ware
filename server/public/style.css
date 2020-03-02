@@ -40,10 +40,14 @@ html,body {
 }
 
 .cool-background {
-  background-image: url(./images/perform.jpg);
-  /* background-image: url(./images/perform.jpg); */
+  background-image: url(./images/snow-center.jpg);
   background-position: center;
   background-size: cover;
+}
+
+.btn-dark {
+  background-color: black;
+  border:black;
 }
 
 .logo {
