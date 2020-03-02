@@ -5,7 +5,7 @@ function Header(props) {
   return (
     <nav className="navbar fixed-top row text-light black">
       <div className="navbar-brand" href="#">
-        <img className="img-fluid" src="../../images/mountain-logo-black.png" width="50" height="50" alt="Logo"></img>
+        <img className="img-fluid" onClick={() => props.scrollTop()} src="../../images/mountain-logo-black.png" width="50" height="50" alt="Logo"></img>
       </div>
       <ul className="navbar-nav font mr-auto mt-3">
         <li className="nav-item active">
@@ -24,19 +24,6 @@ function Header(props) {
           </h1>
         </li>
       </ul>
-
-      {/* <div className="col-1">
-        <img className="img-fluid" src={'../../images/mountain-logo-black.png'} width="90" height="90" alt=""/>
-      </div>
-      <div className="col-3 mt-3 font">
-        <h3 className>SNOW-WARE</h3>
-      </div>
-      <h1 className="col-6">
-        <div className="row justify-content-end cart-header-font">
-          <h3 className="m-2">{props.cartItemCount}</h3>
-          <i onClick={() => props.view('cart', {})} className="fas fa-shopping-cart m-2"></i>
-        </div>
-      </h1> */}
     </nav>
   );
 }
