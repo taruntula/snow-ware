@@ -151,13 +151,15 @@ export default class App extends React.Component {
           <Header cartItemCount={this.getCartCount()} view={this.setView} />
           <div className="row set-height cool-background justify-content-center">
             <div className="col-4 col-md-3 col-lg-2 d-flex flex-column justify-content-center mt-5 text-center">
+              <h1 className="quote-font">PERFORM</h1>
+              <Link activeClass="active" className="test1 btn btn-secondary btn-lg text-light" to="test1" spy={true} smooth={true} offset={-90} duration={500} >SHOP</Link>
 
-              <button className="btn btn-secondary btn-lg"><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Shop</Link></button>
+              {/* <button className="btn btn-secondary btn-lg"></button> */}
             </div>
             {/* <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
             </div> */}
           </div>
-          <div className="container">
+          <div name="test1" className="container">
             <ProductList view={this.setView} />
           </div>
         </div>
