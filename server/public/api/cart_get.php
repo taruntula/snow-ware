@@ -28,12 +28,7 @@ $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
   $data[] = $row;
 }
-// if ($data === []) {
-//   print(json_decode("empty array: []"));
-//   exit();
-// } else {
-//   print(json_encode($data));
-// }
+
 print(json_encode($data));
 
 

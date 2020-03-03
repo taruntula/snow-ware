@@ -158,11 +158,7 @@ export default class App extends React.Component {
           <div className="row set-height cool-background justify-content-center">
             <div className="col-5 col-md-4 col-lg-3 d-flex flex-column justify-content-center ml-3 pt-3 mt-5 text-center">
               <Link activeClass="active" className="test1 btn btn-dark btn-lg text-light quote-font" to="test1" spy={true} smooth={true} offset={-90} duration={500} >SHOP</Link>
-
-              {/* <button className="btn btn-secondary btn-lg"></button> */}
             </div>
-            {/* <div className="col-xs-12 col-sm-6 col-md-6 m-5 justify-content-center text-center quote-font logo">
-            </div> */}
           </div>
           <div name="test1" className="container">
             <ProductList view={this.setView} />

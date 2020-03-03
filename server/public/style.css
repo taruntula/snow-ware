@@ -1,8 +1,4 @@
-
 html,body {
-  /* background-image: url(./images/winter.jpg);
-  background-position: center;
-  background-size: cover; */
   width:100%;
   margin: 0;
 }
@@ -59,19 +55,14 @@ html,body {
 
 .quote-font {
   font-family: 'Permanent Marker';
-  /* font-family: 'Source Sans Pro', sans-serif; */
   font-style: italic;
   font-weight: bolder;
 }
-/* .skew {
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-} */
+
 .black-fade {
   background-image: linear-gradient(to bottom, black, rgb(36, 35, 35));
-  /* background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(63, 58, 58), rgb(0, 0, 0), rgb(0, 0, 0)); */
-  /* background-color:black; */
 }
+
 .alata-font {
   font-family: 'Alata', sans-serif;
 }
@@ -85,13 +76,6 @@ html,body {
   max-width: 100%;
   height: auto;
 }
-
-/* .diagonal {
-  transform: skewY(2deg);
-}
-.unskew {
-  transform: skewY(-2deg);
-} */
 
 /* ----------------------- */
 /* MEDIA QUERIES  */

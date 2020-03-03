@@ -1,8 +1,6 @@
 
 .see-through {
   border-radius: 2%;
-  /* background-image: linear-gradient(to bottom left, #054564, rgb(8, 114, 156));
-  border: #054564; */
   background-color: white;
   background-repeat: no-repeat;
 }
