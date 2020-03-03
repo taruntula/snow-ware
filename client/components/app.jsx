@@ -61,9 +61,6 @@ export default class App extends React.Component {
     })
       .then(data => {
         this.getCartItems();
-        // this.setState({
-        //   cart: this.state.cart.concat(product)
-        // });
       })
       .catch(error => console.error('Fetch failed', error));
 
