@@ -5,6 +5,8 @@ function CartSummary(props) {
   const cartArray = props.cart;
   const subtotal = props.total;
   const total = props.total + 2000;
+  const tax = (subtotal / 100 * 0.1);
+  const formattedTax = '$' + tax.toFixed(2);
   const formattedSubtotal = '$' + (subtotal / 100).toFixed(2);
   const formattedTotal = '$' + (total / 100).toFixed(2);
 
@@ -147,7 +149,7 @@ function CartSummary(props) {
                 <i className="fas fa-question-circle"></i>
               </div>
               <div className="col-6 text-right">
-                <h5>$10.00</h5>
+                <h5>{formattedTax}</h5>
               </div>
             </div>
             <div className="row">
