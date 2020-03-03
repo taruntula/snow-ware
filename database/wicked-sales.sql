@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2020 at 12:53 AM
+-- Generation Time: Mar 03, 2020 at 02:00 AM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `WickedSales`
+-- Database: `wicked-sales`
 --
 
 -- --------------------------------------------------------
@@ -48,13 +48,6 @@ CREATE TABLE `cartItems` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `cartID` mediumint(8) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `cartItems`
---
-
-INSERT INTO `cartItems` (`id`, `productID`, `count`, `price`, `added`, `updated`, `cartID`) VALUES
-(1, 1, 1, 9999, '2020-03-03 00:15:09', '2020-03-03 00:15:09', 19);
 
 -- --------------------------------------------------------
 
@@ -200,7 +193,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `cartItems`
 --
 ALTER TABLE `cartItems`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `images`
 --
