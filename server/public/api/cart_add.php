@@ -1,8 +1,5 @@
 <?php
-// if (defined(INTERNAL)) {
-//   print("Exiting, cannot allow direct access");
-//   exit();
-// }
+
 require_once('functions.php');
 if (!INTERNAL) {
   exit('no direct calls');

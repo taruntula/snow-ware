@@ -33,7 +33,7 @@ JOIN `images` AS i
   WHERE {$whereClause}
 GROUP BY p.id";
 
-// $query = "SELECT * FROM `products` WHERE {$whereClause}";
+
 $result = mysqli_query($conn,$query);
 
 if(!$result){

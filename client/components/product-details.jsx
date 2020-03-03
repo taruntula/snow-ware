@@ -72,7 +72,6 @@ class ProductDetails extends React.Component {
                   <>
                     <DetailsModal image={`../../images/${this.state.product[0].images[0]}`} name={this.state.product[0].name} description={this.state.product[0].shortDescription} id={this.state.product[0].id} price={'$' + (this.state.product[0].price / 100).toFixed(2)} view={this.props.view} modalId="detailsModal" />
                   </>
-                  {/* <button className="btn btn-lg btn-secondary" onClick={() => this.props.addToCart(this.state.product[0])}>Add to Cart</button> */}
                 </div>
               </div>
             </div>

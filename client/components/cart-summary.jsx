@@ -82,10 +82,6 @@ function CartSummary(props) {
             </div>
           </div>
         </div>
-
-        {/* <div className="row justify-content-center">
-          <h1>Cart is Empty</h1>
-        </div> */}
       </div>
 
     );

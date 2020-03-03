@@ -44,10 +44,5 @@ else {
   }
 }
 
-// $deleteQuery = "DELETE FROM `cartItems` WHERE (`count` IS NULL OR `count` <= 0)";
-// $deleteQueryResult = mysqli_query($conn, $updateCartItemQuery);
-// if (!$deleteQueryResult) {
-//   throw new Exception("Sql error with delete cart items query" . mysqli_error($conn));
-// }
 
 ?>

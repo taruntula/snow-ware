@@ -27,7 +27,7 @@ class CheckoutForm extends React.Component {
   formValid({ formErrors, ...rest }) {
     let valid = true;
     Object.values(formErrors).forEach(val => {
-      val.length > 0 && (valid = false); // makes valid false if length greater than 0
+      val.length > 0 && (valid = false);
     });
     Object.values(rest).forEach(val => {
       val === null && (valid = false);
@@ -80,9 +80,6 @@ class CheckoutForm extends React.Component {
         break;
     }
     this.setState({ formErrors, [id]: value });
-    // this.setState({
-    //   [event.target.id]: event.target.value
-    // });
   }
   submitHandler(event) {
     event.preventDefault();
