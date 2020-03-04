@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2020 at 02:00 AM
+-- Generation Time: Mar 04, 2020 at 08:21 PM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -48,6 +48,13 @@ CREATE TABLE `cartItems` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `cartID` mediumint(8) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `cartItems`
+--
+
+INSERT INTO `cartItems` (`id`, `productID`, `count`, `price`, `added`, `updated`, `cartID`) VALUES
+(1, 2, 2, 2595, '2020-03-03 06:04:21', '2020-03-04 20:19:59', 19);
 
 -- --------------------------------------------------------
 
@@ -138,12 +145,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `shortDescription`, `longDescription`) VALUES
-(1, 'Snowboard', 9999, 'snowboard-1.png', 'Fly a little higher with this tricked out version of our hardest charging snowboard.', 'When our shapers split this snowboard, they took a natural terrain slayer and set it loose into the backcountry habitat. Now take that freeride fury and crank it up to eleven with the same technology found in our Mystery models, like Mystery Glass for unmatched power and control, and an ultra-quick methlon base. All its free-ranging attributes including a floaty, directional shape mixed with the comfort of a twin feel when cruising on a flat base translate to unrestricted freedom in pillow stacks, cliff drops, and deep, untracked pow.'),
-(2, 'Helmet', 2595, 'helmet-1.png', 'Easy fit adjustment and lightweight comfort meets low profile style', 'Helmet features an in-mold shell construction for superior comfort with a sleek, low profile fit and feel. A 360 Fit System provides easy, on the go fit adjustment with the turn of a dial, and the magnetic snap helmet buckle can be opened or closed with one hand, even while wearing gloves. Sleek venting throughout keeps goggles clear and maximizes comfort all day long. The expedition fleece liner and ear pads offer maximum warmth and moisture wicking comfort.'),
-(3, 'Snow Boots', 5400, 'boots-1.png', 'All terrain readiness in a lightweight boot that offers Total Comfort right out of the box.', 'Breaking these in is nothing to fear with these boots and its Total Comfort construction. With exclusive science on the inside, you get a broken-in fit that\'s warm and comfortable right out of the box. The effortless micro adjustability and Built For Life Guarantee of the Fit System with exclusive new ropes laces means a connected feel and no wasted time, while the ultralight outsole delivers soft cushioning even in the coldest temps.'),
+(1, 'Snowboard', 9999, 'snowboard-1.png', 'Fly a little higher with this tricked out version of our hardest charging snowboard', 'When our shapers split this snowboard, they took a natural terrain slayer and set it loose into the backcountry habitat. Now take that freeride fury and crank it up to eleven with the same technology found in our Mystery models, like Mystery Glass for unmatched power and control, and an ultra-quick methlon base. All its free-ranging attributes including a floaty, directional shape mixed with the comfort of a twin feel when cruising on a flat base translate to unrestricted freedom in pillow stacks, cliff drops, and deep, untracked pow'),
+(2, 'Helmet', 2595, 'helmet-1.png', 'Easy fit adjustment and lightweight comfort meets low profile style', 'Helmet features an in-mold shell construction for superior comfort with a sleek, low profile fit and feel. A 360 Fit System provides easy, on the go fit adjustment with the turn of a dial, and the magnetic snap helmet buckle can be opened or closed with one hand, even while wearing gloves. Sleek venting throughout keeps goggles clear and maximizes comfort all day long. The expedition fleece liner and ear pads offer maximum warmth and moisture wicking comfort'),
+(3, 'Snow Boots', 5400, 'boots-1.png', 'All terrain readiness in a lightweight boot that offers Total Comfort right out of the box', 'Breaking these in is nothing to fear with these boots and its Total Comfort construction. With exclusive science on the inside, you get a broken-in fit that\'s warm and comfortable right out of the box. The effortless micro adjustability and Built For Life Guarantee of the Fit System with exclusive new ropes laces means a connected feel and no wasted time, while the ultralight outsole delivers soft cushioning even in the coldest temps'),
 (4, 'Bindings', 7499, 'bindings-1.png', 'Tested and proven technologies, combined in a legendary blend of comfort, performance, and all terrain versatility', 'A revolution in snowboard binding performance, the binding pairs the easiness of Spark System baseplate with exclusive features like the strap and Supergrip, both featuring the speed and strength of Double Take buckles. Topped off with an exclusive hi back featuring skintrack friendly negative Forward Lean options, this is the best possible solution for ruling the ups and downs of backcountry touring'),
 (5, 'Snowboard Bag', 3300, 'snowboard-bag-1.png', 'Maximize your on tour options with separate storage for multiple decks, removable boot and binding bag, and room for plenty more', 'Super lightweight and built with rugged materials, the Board Case is like Fort Knox for your entire snowboarding arsenal. Get fully padded protection for multiple decks, super smooth skate wheels, and removable boot and binding bag (the bag also work great for laundry, lunch, wet stuff, anything really) all at a weight that leaves breathing room on the baggage scale'),
-(6, 'Snowboard Pants', 1499, 'snowboard-pants-1.png', 'Seriously snug or tailored to perfection, rep your street style with a clean design offered in two distinctive fits', 'For all the benefits of space age design, it\'s still apparent that keeping it simple works, too. The less is more Pants Slim Fit meets all the requirements of first rate shred pants without appearing too techy. Whether you choose the slim fit or the tailored mid fit, there is still room to layer and tweak. The shoe lace draw cord cinch reels it in for a final sag adjustment.');
+(6, 'Snowboard Pants', 1499, 'snowboard-pants-1.png', 'Seriously snug or tailored to perfection, rep your street style with a clean design offered in two distinctive fits', 'For all the benefits of space age design, it\'s still apparent that keeping it simple works, too. The less is more Pants Slim Fit meets all the requirements of first rate shred pants without appearing too techy. Whether you choose the slim fit or the tailored mid fit, there is still room to layer and tweak. The shoe lace draw cord cinch reels it in for a final sag adjustment');
 
 --
 -- Indexes for dumped tables
@@ -193,7 +200,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `cartItems`
 --
 ALTER TABLE `cartItems`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `images`
 --
