@@ -1,0 +1,26 @@
+
+.see-through {
+  border-radius: 2%;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+.picture {
+  background-image: url(../../server/public/images/snowboard-1.png);
+}
+
+.catalog-height {
+  height: 35rem;
+}
+
+.ubuntu-font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.name-font-size {
+  font-size: 1.3rem;
+}
+.price-font-size {
+  font-size: 2rem;
+  font-weight: bold;
+}

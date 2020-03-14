@@ -1,0 +1,225 @@
+html,body {
+  width:100%;
+  margin: 0;
+}
+#root {
+  height: 100vh;
+  width:100%;
+}
+
+.set-height {
+  height: 26rem;
+}
+
+.cart-height {
+  height: 13rem;
+}
+
+.modal-height {
+  height: 13rem;
+}
+
+.details-height {
+  height: 30rem;
+}
+
+.details-small {
+  height: 9rem;
+}
+
+.catalog-width {
+  width: 70%;
+}
+
+.img-fluid.details-small:hover {
+  border: 2px solid;
+}
+
+.cool-background {
+  background-image: url(./images/snow-center.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-dark {
+  background-color: black;
+  border:black;
+}
+
+.logo {
+  background-image: url(./images/mountain-logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.quote-font {
+  font-family: 'Permanent Marker';
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.black-fade {
+  background-image: linear-gradient(to bottom, black, rgb(36, 35, 35));
+}
+
+.alata-font {
+  font-family: 'Alata', sans-serif;
+}
+
+.disable-button {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.cart-width {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------- */
+/* MEDIA QUERIES  */
+/* ----------------------- */
+
+/* iPad */
+@media (max-width:768px) {
+  .paragraph-size {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width:575px) {
+  .navbar {
+    margin: 0;
+    width: 575px;
+  }
+}
+
+/* mac smallest chrome window */
+@media (max-width:500px) {
+  .navbar {
+    margin: 0;
+    width: 500px;
+  }
+  .catalog-width {
+    width: 58%;
+  }
+  .carousel.carousel-slider {
+    left: 17px;
+  }
+  .carousel .thumbs {
+    right: 20px;
+  }
+  .cart-height {
+    height: 27rem;
+  }
+}
+
+/* mobile L */
+@media (max-width:425px) {
+  .navbar {
+    margin: 0;
+    width: 425px;
+  }
+}
+/* iPhone 6/7/8 plus */
+@media (max-width:414px) {
+  .navbar {
+    margin: 0;
+    width: 414px;
+  }
+  .carousel .thumbs {
+    right: 14px;
+  }
+  .cart-height {
+    height: 20rem;
+  }
+}
+
+/* onePlus5t */
+@media (max-width:412px) {
+  .navbar {
+    margin: 0;
+    width: 412px;
+  }
+}
+
+/* Pixel 2 */
+@media (max-width:411px) {
+  .navbar {
+    margin: 0;
+    width: 411px;
+  }
+  .carousel .thumbs {
+    right: 14px;
+  }
+  .cart-height {
+    height: 20rem;
+  }
+}
+
+/* iPhone 6/7/8 */
+@media (max-width:375px) {
+  .navbar {
+    margin: 0;
+    width: 375px;
+  }
+  .catalog-width {
+    width: 71%;
+}
+  li h3:first-child {
+        font-size: 1.10rem;
+  }
+  .carousel.carousel-slider {
+    left: 13px;
+  }
+  .carousel .thumbs {
+    right: 22px;
+  }
+
+}
+/* Galaxy S5 */
+@media (max-width:360px) {
+  .navbar {
+    margin: 0;
+    width: 360px;
+  }
+  li h3:first-child {
+        font-size: 1.40rem;
+  }
+  .catalog-width {
+    width: 73%;
+  }
+  .carousel.carousel-slider {
+    left: 19px;
+  }
+  .carousel .thumbs {
+    right: 18px;
+  }
+  .cart-height {
+    height: 18rem;
+  }
+}
+
+/* iphone 5/SE */
+@media (max-width:320px) {
+  .navbar {
+    margin: 0;
+    width: 320px;
+  }
+  .catalog-width {
+    width: 91%;
+  }
+  li h3:first-child {
+        font-size: 1.10rem;
+  }
+  .cart-height {
+    height: 17rem;
+  }
+  .carousel.carousel-slider {
+    left: 35px;
+  }
+  .carousel .thumbs {
+    right: 20px;
+  }
+}

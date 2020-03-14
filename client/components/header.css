@@ -1,0 +1,28 @@
+.font {
+    font-weight: 900;
+    font-size: 25px;
+    font: bold;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.black {
+  background-color: black;
+}
+
+.black-logo {
+  background-image: url(../../server/public/images/mountain-logo-black.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cart-header-font {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/* .diagonal {
+  transform: skewY(2deg);
+}
+
+.unskew {
+  transform: skewY(-2deg);
+} */
