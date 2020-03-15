@@ -12,7 +12,7 @@ A full stack LAMP & React shopping cart app.
 
 ## Live Demo
 
-[Named Link](https://snowware.tarunpadath.com/ "Snow-Ware")
+[Snow-Ware](https://snowware.tarunpadath.com/ "Snow-Ware")
 
 
 ## Features
