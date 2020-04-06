@@ -1,5 +1,6 @@
 import React from 'react';
 import CartSummaryItem from './cart-summary-item';
+import ReactTooltip from 'react-tooltip';
 
 function CartSummary(props) {
   const cartArray = props.cart;
@@ -52,7 +53,7 @@ function CartSummary(props) {
                 <h6>Shipping:</h6>
               </div>
               <div className="col-2" style={{ color: 'orange' }}>
-                <i className="fas fa-question-circle"></i>
+                <i data-tip="shipping will be a flat $10" className="fas fa-question-circle"></i>
               </div>
               <div className="col-6 text-right">
                 <h5>$0.00</h5>
@@ -63,7 +64,7 @@ function CartSummary(props) {
                 <h6>Tax:</h6>
               </div>
               <div className="col-2" style={{ color: 'orange' }}>
-                <i className="fas fa-question-circle"></i>
+                <i data-tip="Tax will be 10%" className="fas fa-question-circle"></i>
               </div>
               <div className="col-6 text-right">
                 <h5>$0.00</h5>
@@ -84,6 +85,7 @@ function CartSummary(props) {
             </div>
           </div>
         </div>
+        <ReactTooltip place="right" />
       </div>
 
     );
@@ -135,7 +137,7 @@ function CartSummary(props) {
                 <h6>Shipping:</h6>
               </div>
               <div className="col-2" style={{ color: 'orange' }}>
-                <i className="fas fa-question-circle"></i>
+                <i data-tip="shipping will be a flat $10" className="fas fa-question-circle"></i>
               </div>
               <div className="col-6 text-right">
                 <h5>$10.00</h5>
@@ -146,7 +148,7 @@ function CartSummary(props) {
                 <h6>Tax:</h6>
               </div>
               <div className="col-2" style={{ color: 'orange' }}>
-                <i className="fas fa-question-circle"></i>
+                <i data-tip="tax will be 10%" className="fas fa-question-circle"></i>
               </div>
               <div className="col-6 text-right">
                 <h5>{formattedTax}</h5>
@@ -172,6 +174,7 @@ function CartSummary(props) {
             </div>
           </div>
         </div>
+        <ReactTooltip place="right" />
       </div>
     );
   }
