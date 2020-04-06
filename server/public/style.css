@@ -6,7 +6,9 @@ html,body {
   height: 100vh;
   width:100%;
 }
-
+.hand {
+  cursor: pointer;
+}
 .set-height {
   height: 26rem;
 }

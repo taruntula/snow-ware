@@ -10,7 +10,7 @@ function DisclaimerModal(props) {
 
           </div>
           <div className="modal-body">
-            <div className="row pl-1">
+            <div className="row p-3">
               <h5>This is a mock e-commerce website. Please do not use any of your real information.</h5>
             </div>
           </div>
