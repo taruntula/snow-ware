@@ -169,7 +169,7 @@ function CartSummary(props) {
             </div>
             <div className="row justify-content-center mt-2">
               <div className="col-10 text-center">
-                <button className="btn btn-light btn-lg btn-block" onClick={() => props.view('checkout', {})}>Checkout</button>
+                <button className="btn btn-secondary btn-lg btn-block" onClick={() => props.view('checkout', {})}>Checkout</button>
               </div>
             </div>
           </div>

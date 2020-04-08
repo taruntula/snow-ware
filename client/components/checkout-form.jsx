@@ -42,16 +42,17 @@ class CheckoutForm extends React.Component {
     const creditCardRegex = /^[0-9]{16}$/;
     const addressRegex = /[A-Za-z0-9]{2,}/;
     const zipRegex = /^[0-9]{5}$/;
-    const nameRegex = /^[A-Za-z]{2,}/;
+    const nameRegex = /^[A-Za-z]{5,}/;
     const stateRegex = /^[A-Za-z]{6,}/;
     let formErrors = this.state.formErrors;
     switch (id) {
       case 'name':
         formErrors.name = nameRegex.test(value)
           ? ''
-          : 'Minimum 2 letters required';
+          : 'Minimum 5 letters required';
         break;
       case 'creditCardNumber':
+        value.replace(/^[0-9]/, '');
         formErrors.creditCardNumber = creditCardRegex.test(value)
           ? ''
           : 'Invalid credit card number';
