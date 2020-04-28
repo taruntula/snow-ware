@@ -40,8 +40,9 @@ class CheckoutForm extends React.Component {
     const id = event.target.id;
     let value = event.target.value;
     const creditCardRegex = /^[0-9]{16}$/;
-    const addressRegex = /[A-Za-z0-9]{2,}/;
+    const addressRegex = /[A-Za-z0-9]{5,}/;
     const zipRegex = /^[0-9]{5}$/;
+    const cityRegex = /[A-Za-z]{3,}$/;
     const nameRegex = /^[A-Za-z]{5,}/;
     const stateRegex = /^[A-Za-z]{6,}/;
     let formErrors = this.state.formErrors;
@@ -52,7 +53,7 @@ class CheckoutForm extends React.Component {
           : 'Minimum 5 letters required';
         break;
       case 'creditCardNumber':
-        value = value.replace(/([A-za-z])/, '');
+        value = value.replace(/([^0-9])/, '');
         formErrors.creditCardNumber = creditCardRegex.test(value)
           ? ''
           : 'Invalid credit card number';
@@ -60,7 +61,7 @@ class CheckoutForm extends React.Component {
       case 'address':
         formErrors.address = addressRegex.test(value)
           ? ''
-          : 'Invalid address';
+          : 'Minimum 5 characters required';
         break;
       case 'zipCode':
         formErrors.zipCode = zipRegex.test(value)
@@ -68,9 +69,10 @@ class CheckoutForm extends React.Component {
           : 'Invalid zip';
         break;
       case 'city':
-        formErrors.city = nameRegex.test(value)
+        value = value.replace(/([^A-Za-z])/, '');
+        formErrors.city = cityRegex.test(value)
           ? ''
-          : 'Minimum 2 characters required';
+          : 'Minimum 3 characters required';
         break;
       case 'state':
         formErrors.state = stateRegex.test(value)
@@ -116,7 +118,7 @@ class CheckoutForm extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="creditCard">Credit Card</label>
-              <input type="text" value={this.state.creditCardNumber} className="form-control" id="creditCardNumber" placeholder="#" onChange={this.changeHandler}></input>
+              <input type="text" value={this.state.creditCardNumber} className="form-control" id="creditCardNumber" placeholder="#" maxLength={16} onChange={this.changeHandler}></input>
               {formErrors.creditCardNumber.length > 0 && (
                 <span className="text-danger">{formErrors.creditCardNumber}</span>
               )}
@@ -131,7 +133,7 @@ class CheckoutForm extends React.Component {
             <div className="form-row mb-3">
               <div className="col-4">
                 <label htmlFor="city">City</label>
-                <input type="text" className="form-control" id="city" placeholder="City" onChange={this.changeHandler}></input>
+                <input type="text" value={this.state.city} className="form-control" id="city" placeholder="City" onChange={this.changeHandler}></input>
                 {formErrors.city.length > 0 && (
                   <span className="text-danger">{formErrors.city}</span>
                 )}
