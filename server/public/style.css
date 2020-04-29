@@ -6,7 +6,9 @@ html,body {
   height: 100vh;
   width:100%;
 }
-
+.hand {
+  cursor: pointer;
+}
 .set-height {
   height: 26rem;
 }
@@ -77,6 +79,7 @@ html,body {
   height: auto;
 }
 
+
 /* ----------------------- */
 /* MEDIA QUERIES  */
 /* ----------------------- */
@@ -86,12 +89,29 @@ html,body {
   .paragraph-size {
     font-size: 0.8rem;
   }
+  .paragraph-font {
+    font-size: 15px;
+  }
+  /* .cart-height {
+    height: 27rem;
+  } */
+}
+@media (max-width:767px) {
+  .cart-height {
+    height: 27rem;
+  }
 }
 
 @media (max-width:575px) {
-  .navbar {
+  /* .navbar {
     margin: 0;
     width: 575px;
+  } */
+  .catalog-width {
+    width: 48%;
+  }
+  .cart-height {
+    height: 27rem;
   }
 }
 
@@ -121,6 +141,9 @@ html,body {
     margin: 0;
     width: 425px;
   }
+  .carousel.carousel-slider {
+    left: 0px;
+  }
 }
 /* iPhone 6/7/8 plus */
 @media (max-width:414px) {
@@ -134,6 +157,9 @@ html,body {
   .cart-height {
     height: 20rem;
   }
+  .carousel.carousel-slider {
+    left: 0px;
+  }
 }
 
 /* onePlus5t */
@@ -141,6 +167,9 @@ html,body {
   .navbar {
     margin: 0;
     width: 412px;
+  }
+  .carousel.carousel-slider {
+    left: 1px;
   }
 }
 
@@ -150,6 +179,10 @@ html,body {
     margin: 0;
     width: 411px;
   }
+  .carousel.carousel-slider {
+    left: 0px;
+  }
+
   .carousel .thumbs {
     right: 14px;
   }
@@ -220,6 +253,9 @@ html,body {
     left: 35px;
   }
   .carousel .thumbs {
-    right: 20px;
+    right: 25px;
+  }
+  .button-font {
+    font-size: 15px;
   }
 }

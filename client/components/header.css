@@ -19,6 +19,9 @@
 .cart-header-font {
   font-family: 'Source Sans Pro', sans-serif;
 }
+.fa-shopping-cart:hover {
+  color:#D3D3D3 ;
+}
 /* .diagonal {
   transform: skewY(2deg);
 }
