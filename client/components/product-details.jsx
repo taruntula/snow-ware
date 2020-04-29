@@ -66,12 +66,15 @@ class ProductDetails extends React.Component {
                   <p>{this.state.product[0].longDescription}</p>
                 </div>
               </div>
-              <div className="row mt-3">
+              <div className="row mt-3 mb-3">
                 <div className="col">
                   <button onClick={() => this.props.addToCart(this.state.product[0])} type="button" className="btn btn-block btn-secondary" data-toggle="modal" data-target="#detailsModal">Add to Cart</button>
                   <>
                     <DetailsModal image={`../../images/${this.state.product[0].images[0]}`} name={this.state.product[0].name} description={this.state.product[0].shortDescription} id={this.state.product[0].id} price={'$' + (this.state.product[0].price / 100).toFixed(2)} view={this.props.view} modalId="detailsModal" />
                   </>
+                </div>
+                <div className="col">
+                  <button onClick={() => this.props.view('cart', {})} type="button" className="btn btn-block btn-secondary">View Cart</button>
                 </div>
               </div>
             </div>

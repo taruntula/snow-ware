@@ -12,7 +12,7 @@ function ProductListItem(props) {
         <div className="card-body h-50 p-3 text-center d-flex flex-column ubuntu-font ">
           <h3 onClick={() => props.newView('details', idObject)} className="name-font-size hand">{props.name}</h3>
           <h6 className="price-font-size">{formattedPrice}</h6>
-          <p>{props.description}</p>
+          <p className="paragraph-font">{props.description}</p>
           <button className="btn btn-light btn-lg mt-auto" onClick={() => props.newView('details', idObject)}>Details</button>
         </div>
       </div>
